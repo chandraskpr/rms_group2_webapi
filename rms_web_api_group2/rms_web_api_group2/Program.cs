@@ -1,7 +1,19 @@
+using Microsoft.EntityFrameworkCore;
+using rms_web_api_group2.RMSdb;
+using System.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddControllersWithViews();
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<DbContext>(options => options.UseSqlServer("connectionString"));
+//builder.Services.AddDbContext<RMSContext>(op =>
+//{
+//    var connetctionString = IConfiguration.GetConnectionString("DefaultConnection");
+//    op.UseSqlServer(Configuration.GetConnectionString("RMSDbConnection"));
+//});
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
