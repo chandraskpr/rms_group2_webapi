@@ -2,7 +2,7 @@
 
 namespace RmsWebApi.Data
 {
-    public class UserInfoDomain
+    public class UserInfoData
 
     {
         [Key]

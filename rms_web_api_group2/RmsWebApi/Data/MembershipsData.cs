@@ -1,6 +1,6 @@
-﻿namespace RmsWebApi.Data
+﻿namespace RMS.Domain.ResumeDomain
 {
-    public class Memberships
+    public class MembershipsData
     {
         public string MembershipName { get; set; }
 

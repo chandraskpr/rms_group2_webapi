@@ -1,4 +1,6 @@
-﻿using RmsWebApi.Data;
+﻿using RMS.Data;
+using RmsWebApi.Data;
+using RmsWebApi.Data;
 using RmsWebApi.Repository.Interfaces;
 using RmsWebApi.RMS_DB;
 
@@ -13,9 +15,9 @@ namespace RmsWebApi.Repository
 
         }
 
-        public List<UserInfoDomain> GetAll()
+        public List<UserInfoData> GetAll()
         {
-            var records = base.SelectAll().Select(x => new UserInfoDomain()
+            var records = base.SelectAll().Select(x => new UserInfoData()
             {
                 UserId = x.UserId,
                 UserName = x.UserName,
@@ -26,7 +28,7 @@ namespace RmsWebApi.Repository
             return records;
         }
 
-        public void Create(UserInfoDomain userInfo)
+        public void Create(UserInfoData userInfo)
         {
             var user = new UserInfo()
             {
@@ -47,7 +49,7 @@ namespace RmsWebApi.Repository
 
         }
 
-        public void Update(int UserId, UserInfoDomain userInfo)
+        public void Update(int UserId, UserInfoData userInfo)
         {
             var user = base.SelectAll().FirstOrDefault(x => x.UserId == UserId);
 
@@ -91,6 +93,15 @@ namespace RmsWebApi.Repository
             return records;
         }
 
+        List<UserNotificationsData> IUserRepository.GetNotifications()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<UserNotificationsData> IUserRepository.GetActiveNotification()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

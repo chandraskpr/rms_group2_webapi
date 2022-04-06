@@ -19,13 +19,13 @@ namespace RmsWebApi.Controllers.API.Controller
         }
 
         [HttpGet]
-        public List<ResumeDomain> Get()
+        public List<ResumeData> Get()
         {
             return this.resumeRepository.GetAll();
         }
 
         [HttpPost]
-        public void Post([FromBody] ResumeDomain value)
+        public void Post([FromBody] ResumeData value)
         {
             this.resumeRepository.Create(value);
         }
@@ -37,7 +37,7 @@ namespace RmsWebApi.Controllers.API.Controller
         }
 
         [HttpPut("{id}")]
-        public void Update(ResumeDomain resume)
+        public void Update(ResumeData resume)
         {
             this.resumeRepository.Update(resume.ResumeId, resume);
         }

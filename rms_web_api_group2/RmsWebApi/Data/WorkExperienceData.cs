@@ -1,6 +1,8 @@
-﻿namespace RmsWebApi.Data
+﻿using System;
+
+namespace RMS.Domain.ResumeDomain
 {
-    public class WorkExperiencecs
+    public class WorkExperienceData
     {
         public string ClientDescription { get; set; }
 

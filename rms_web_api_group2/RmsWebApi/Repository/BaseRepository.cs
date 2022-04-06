@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 namespace RmsWebApi.Repository
 {
-    public class BaseRepository<T>:IBaseRepository<T> where T:class
+    public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected readonly RMSContext context;
         private readonly DbSet<T> entitySet;
@@ -14,28 +14,30 @@ namespace RmsWebApi.Repository
         public BaseRepository(RMSContext context)
         {
             this.context = context;
+
             this.entitySet = this.context.Set<T>();
         }
 
-        public  List<T> SelectAll()
+        public List<T> SelectAll()
         {
-            return this.entitySet.ToList();
+            return entitySet.ToList();
         }
-       public void Create(T entity) 
-       {
+        public void Create(T entity)
+        {
             this.entitySet.Add(entity);
             this.context.SaveChanges();
-       }
-       public void Update(T entity) {
+        }
+        public void Update(T entity)
+        {
             this.entitySet.Update(entity);
             this.context.SaveChanges();
-       } 
-       public void Delete(T entity) 
-       {
+        }
+        public void Delete(T entity)
+        {
             this.entitySet.Remove(entity);
             this.context.SaveChanges();
-       } 
-        
+        }
+
     }
-   
+
 }

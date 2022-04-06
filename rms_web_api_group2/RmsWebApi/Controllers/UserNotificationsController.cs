@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RMS.Data;
 using RmsWebApi.Data;
 using RmsWebApi.Repository.Interfaces;
 
