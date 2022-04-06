@@ -1,39 +1,41 @@
-﻿using rms_web_api_group2.repository.Interface;
+﻿using Microsoft.EntityFrameworkCore;
+using rms_web_api_group2.repository.Interface;
+using rms_web_api_group2.RMSdb;
 
 namespace rms_web_api_group2.repository
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-        protected List<T> _list;
+        protected readonly RMSContext context;
+        private DbSet<T> entitySet;
 
-        public void Delete(object id)
+        public BaseRepository(RMSContext context)
         {
-           this._list.Remove((T)id);
+            this.context = context;
+            this.entitySet = this.context.Set<T>();
         }
 
-        public List<T> GetAll()
+        public void Delete(T entity)
         {
-           return _list;
+            this.entitySet.Remove(entity);
+            this.context.SaveChanges();
         }
 
-        public T GetById(object id)
+        public List<T> SelectAll()
         {
-           return  _list;
+            return this.entitySet.ToList();
         }
-
+        
         public void Insert(T obj)
         {
-            this._list.Add(obj);
-        }
-
-        public void Save()
-        {
-            throw new NotImplementedException();
+            this.entitySet.Add(obj);
+            this.context.SaveChanges();
         }
 
         public void Update(T obj)
         {
-            throw new NotImplementedException();
+            this.entitySet.Update(obj);
+            this.context.SaveChanges();
         }
     }
     

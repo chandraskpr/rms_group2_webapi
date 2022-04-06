@@ -5,11 +5,11 @@ namespace rms_web_api_group2.repository.Interface
     public interface IBaseRepository <T> where T: class
 
      {
-        List<T> GetAll();
-        T GetById(object id);
+        List<T> SelectAll();
+       
         void Insert(T obj);
         void Update(T obj);
-        void Delete(object id);
-        void Save();
+        void Delete(T entity);
+       
     }
 }

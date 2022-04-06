@@ -1,6 +1,6 @@
-﻿namespace rms_web_api_group2.data.Resume
+﻿namespace RMS.Domain.ResumeDomain
 {
-    public class Skill
+    public class UserSkillDomain
     {
         public int SkillId { get; set; }
         public string Skill { get; set; }

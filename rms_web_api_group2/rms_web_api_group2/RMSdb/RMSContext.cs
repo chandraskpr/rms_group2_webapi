@@ -21,7 +21,7 @@ namespace rms_web_api_group2.RMSdb
         public virtual DbSet<EducationDetail> EducationDetails { get; set; } = null!;
         public virtual DbSet<Membership> Memberships { get; set; } = null!;
         public virtual DbSet<MyDetail> MyDetails { get; set; } = null!;
-        public virtual DbSet<Resume> Resumes { get; set; } = null!;
+        public virtual DbSet<Resume> Resume { get; set; } = null!;
         public virtual DbSet<Skill> Skills { get; set; } = null!;
         public virtual DbSet<UserInfo> UserInfos { get; set; } = null!;
         public virtual DbSet<UserNotification> UserNotifications { get; set; } = null!;
