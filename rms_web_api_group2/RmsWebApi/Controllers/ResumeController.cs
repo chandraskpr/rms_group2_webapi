@@ -37,9 +37,9 @@ namespace RmsWebApi.Controllers.API.Controller
         }
 
         [HttpPut("{id}")]
-        public void Update(ResumeDomain resume)
+        public void Update([FromRoute] int id, ResumeDomain resume)
         {
-            this.resumeRepository.Update(resume.ResumeId, resume);
+            this.resumeRepository.Update(id, resume);
         }
     }
 }

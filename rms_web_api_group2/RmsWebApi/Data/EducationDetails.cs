@@ -12,7 +12,7 @@
 
         public int PassingYear { get; set; }
 
-        public float Marks { get; set; }
+        public double Marks { get; set; }
 
         public string University { get; set; }
     }

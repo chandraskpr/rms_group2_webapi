@@ -34,7 +34,6 @@ namespace RmsWebApi.Controllers
         [HttpPost]
         public void Post([FromBody] UserNotificationsData value)
         {
-            
         }
 
         // PUT api/<UserNotificationsController>/5
