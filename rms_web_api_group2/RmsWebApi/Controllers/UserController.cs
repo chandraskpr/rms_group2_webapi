@@ -28,7 +28,7 @@ namespace RmsWebApi.Controllers
 
         // GET: api/<UserController>
         [HttpGet]
-        public List<UserInfoDomain> Get()
+        public List<UserInfoData> Get()
         {
             return this.userRepository.GetAll();
         }
@@ -37,7 +37,7 @@ namespace RmsWebApi.Controllers
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public UserInfoDomain Get(int id)
+        public UserInfoData Get(int id)
         {
             return this.userRepository.GetAll().FirstOrDefault(x => x.UserId == id);
         }
@@ -46,7 +46,7 @@ namespace RmsWebApi.Controllers
 
         // POST api/<UserController>
         [HttpPost]
-        public void Post([FromBody] UserInfoDomain value)
+        public void Post([FromBody] UserInfoData value)
         {
             this.userRepository.Create(value);
         }
@@ -55,7 +55,7 @@ namespace RmsWebApi.Controllers
 
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] UserInfoDomain value)
+        public void Put(int id, [FromBody] UserInfoData value)
         {
             this.userRepository.Update(id, value);
         }

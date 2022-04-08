@@ -1,24 +1,16 @@
 ﻿using RmsWebApi.Data;
 using RmsWebApi.RMS_DB;
 
-
-
 namespace RmsWebApi.Repository.Interfaces
 {
     public interface IResumeRepository : IBaseRepository<Resume>
     {
-        public List<ResumeDomain> GetAll();
+        public List<ResumeData> GetAll();
 
-
-
-        public void Create(ResumeDomain resume);
-
-
+        public void Create(ResumeData resume);
 
         public void Delete(int ResumeId);
 
-
-
-        public void Update(int ResumeId, ResumeDomain resume);
+        public void Update(int ResumeId, ResumeData resume);
     }
 }

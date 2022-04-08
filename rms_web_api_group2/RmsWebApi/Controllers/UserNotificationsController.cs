@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RMS.Data;
 using RmsWebApi.Data;
 using RmsWebApi.Repository.Interfaces;
 
@@ -6,7 +7,7 @@ using RmsWebApi.Repository.Interfaces;
 
 namespace RmsWebApi.Controllers
 {
-    [Route("Shubham/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UserNotificationsController : ControllerBase
     {
@@ -34,6 +35,7 @@ namespace RmsWebApi.Controllers
         [HttpPost]
         public void Post([FromBody] UserNotificationsData value)
         {
+            
         }
 
         // PUT api/<UserNotificationsController>/5

@@ -1,4 +1,6 @@
-﻿using RmsWebApi.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using RMS.Data;
+using RmsWebApi.Data;
 using RmsWebApi.Repository.Interfaces;
 using RmsWebApi.RMS_DB;
 
@@ -13,41 +15,66 @@ namespace RmsWebApi.Repository
 
         }
 
-        public List<UserInfoDomain> GetAll()
+        public List<UserInfoData> GetAll()
         {
-            var records = base.SelectAll().Select(x => new UserInfoDomain()
+            var records = base.SelectAll().Select(x => new UserInfoData()
             {
                 UserId = x.UserId,
                 UserName = x.UserName,
                 UserEmail = x.UserEmail,
                 UserRole = x.UserRole,
+                userResumeDomain = x.UserResumes.Select(a => new UserResumeDomain()
+                {
+                    UserResumeId = a.UserResumeId,
+                    UserId = a.UserId,
+                    ResumeId = a.ResumeId,
+                }).ToList(),
 
+                userNotificationDomain = x.UserNotifications.Select(b => new UserNotificationsData()
+                {
+                    NotificationId = b.NotificationId,
+                    NotificationDescription = b.NotificationDescription,
+                    NotificationState = b.NotificationState,
+                    CreationDate = b.CreationDate,
+                    UserId = b.UserId,
+                }).ToList(),
+            
             }).ToList();
             return records;
         }
 
-        public void Create(UserInfoDomain userInfo)
+        public void Create(UserInfoData userInfo)
         {
             var user = new UserInfo()
             {
                 UserName = userInfo.UserName,
                 UserEmail = userInfo.UserEmail,
                 UserRole = userInfo.UserRole,
-
             };
 
-            base.Create(user);
+            foreach(var record in userInfo.userResumeDomain)
+            {
+                user.UserResumes.Add(new UserResume()
+                {
+                    ResumeId = record.ResumeId,
+                    UserId= record.UserId,
+                    UserResumeId= record.UserResumeId,
+                });
+            }
 
+            base.Create(user);
         }
 
         public void Delete(int UserId)
         {
-            var user = base.SelectAll().FirstOrDefault(x => x.UserId == UserId);
+            var user = this.entitySet
+            .Include(x => x.UserResumes)
+            .FirstOrDefault(x => x.UserId == UserId);
             base.Delete(user);
 
         }
 
-        public void Update(int UserId, UserInfoDomain userInfo)
+        public void Update(int UserId, UserInfoData userInfo)
         {
             var user = base.SelectAll().FirstOrDefault(x => x.UserId == UserId);
 
@@ -57,8 +84,17 @@ namespace RmsWebApi.Repository
                 user.UserEmail = userInfo.UserEmail;
                 user.UserRole = userInfo.UserRole;
 
-                base.Update(user);
+                foreach (var record in userInfo.userResumeDomain)
+                {
+                    user.UserResumes.Add(new UserResume()
+                    {
+                        ResumeId = record.ResumeId,
+                        UserId = record.UserId,
+                        UserResumeId = record.UserResumeId,
+                    });
+                }
 
+                base.Update(user);
             }
 
         }

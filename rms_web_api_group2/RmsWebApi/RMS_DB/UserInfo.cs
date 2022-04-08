@@ -9,6 +9,7 @@ namespace RmsWebApi.RMS_DB
         {
             UserNotifications = new HashSet<UserNotification>();
             UserResumes = new HashSet<UserResume>();
+            
         }
 
         public int UserId { get; set; }

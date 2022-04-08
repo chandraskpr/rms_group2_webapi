@@ -1,17 +1,18 @@
-﻿using RmsWebApi.Data;
+﻿using RMS.Data;
+using RmsWebApi.Data;
 using RmsWebApi.RMS_DB;
 
 namespace RmsWebApi.Repository.Interfaces
 {
     public interface IUserRepository : IBaseRepository<UserInfo>
     {
-        public List<UserInfoDomain> GetAll();
+        public List<UserInfoData> GetAll();
 
-        public void Create(UserInfoDomain userInfo);
+        public void Create(UserInfoData userInfo);
 
         public void Delete(int UserId);
 
-        public void Update(int UserId, UserInfoDomain userInfo);
+        public void Update(int UserId, UserInfoData userInfo);
         public List<UserNotificationsData> GetNotifications();
 
         public List<UserNotificationsData> GetActiveNotification();

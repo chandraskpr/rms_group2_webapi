@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace RMS.Domain.ResumeDomain
 {
-    public class Skills
+    public class SkillsData
     {
         public string Category { get; set; }
     }
