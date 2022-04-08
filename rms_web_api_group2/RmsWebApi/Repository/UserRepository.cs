@@ -1,8 +1,9 @@
-﻿using RMS.Data;
-using RmsWebApi.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using RMS.Data;
 using RmsWebApi.Data;
 using RmsWebApi.Repository.Interfaces;
 using RmsWebApi.RMS_DB;
+
 
 namespace RmsWebApi.Repository
 {
@@ -24,6 +25,23 @@ namespace RmsWebApi.Repository
                 UserEmail = x.UserEmail,
                 UserRole = x.UserRole,
 
+                userResumeData = x.UserResumes.Select(a => new UserResumeData()
+                {
+                    UserId = a.UserResumeId,
+                    UserResumeId = a.UserResumeId,
+                    ResumeId = a.ResumeId,
+                }).ToList(),
+
+                userNotificationData = x.UserNotifications.Select(n => new UserNotificationsData()
+                {
+                    UserId = n.UserId,
+                    CreationDate = n.CreationDate,
+                    NotificationDescription = n.NotificationDescription,
+                    NotificationId = n.NotificationId,
+                    NotificationState = n.NotificationState,
+                }
+                ).ToList(),
+
             }).ToList();
             return records;
         }
@@ -37,16 +55,42 @@ namespace RmsWebApi.Repository
                 UserRole = userInfo.UserRole,
 
             };
+            foreach (var record in userInfo.userResumeData)
+            {
+                user.UserResumes.Add(new UserResume()
+                {
+                    UserResumeId = record.UserResumeId,
+                    UserId = record.UserId,
+                    ResumeId = record.ResumeId,
 
+                });
+            }
+
+            foreach (var record in userInfo.userNotificationData)
+            {
+                user.UserNotifications.Add(new UserNotification()
+                {
+                    NotificationId = record.NotificationId,
+                    CreationDate = record.CreationDate,
+                    NotificationDescription = record.NotificationDescription,
+                    NotificationState = record.NotificationState,
+                    UserId = record.UserId,
+                });
+
+            }
             base.Create(user);
 
         }
 
         public void Delete(int UserId)
         {
-            var user = base.SelectAll().FirstOrDefault(x => x.UserId == UserId);
-            base.Delete(user);
+            var res = this.entitySet
+            .Include(x => x.UserResumes)
+            .Include(y => y.UserNotifications)
+            .FirstOrDefault(x => x.UserId == UserId);
 
+
+            base.Delete(res);
         }
 
         public void Update(int UserId, UserInfoData userInfo)
@@ -59,6 +103,29 @@ namespace RmsWebApi.Repository
                 user.UserEmail = userInfo.UserEmail;
                 user.UserRole = userInfo.UserRole;
 
+                foreach (var record in userInfo.userResumeData)
+                {
+                    user.UserResumes.Add(new UserResume()
+                    {
+                        UserResumeId = record.UserResumeId,
+                        UserId = record.UserId,
+                        ResumeId = record.ResumeId,
+
+                    });
+                }
+
+                foreach (var record in userInfo.userNotificationData)
+                {
+                    user.UserNotifications.Add(new UserNotification()
+                    {
+                        NotificationId = record.NotificationId,
+                        CreationDate = record.CreationDate,
+                        NotificationDescription = record.NotificationDescription,
+                        NotificationState = record.NotificationState,
+                        UserId = record.UserId,
+                    });
+
+                }
                 base.Update(user);
 
             }
@@ -93,17 +160,6 @@ namespace RmsWebApi.Repository
             return records;
         }
 
-        List<UserNotificationsData> IUserRepository.GetNotifications()
-        {
-            throw new NotImplementedException();
-        }
-
-        List<UserNotificationsData> IUserRepository.GetActiveNotification()
-        {
-            throw new NotImplementedException();
-        }
     }
-
-
 
 }

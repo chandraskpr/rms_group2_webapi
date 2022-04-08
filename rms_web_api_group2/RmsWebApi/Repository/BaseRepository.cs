@@ -9,7 +9,7 @@ namespace RmsWebApi.Repository
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected readonly RMSContext context;
-        private readonly DbSet<T> entitySet;
+        protected  readonly DbSet<T> entitySet;
 
         public BaseRepository(RMSContext context)
         {

@@ -35,26 +35,26 @@ namespace RmsWebApi.Repository
                     MainDescription = b.MainDescription,
                 }).ToList(),
 
-                achivements = context.Achievements.Where(w => w.ResumeId == x.ResumeId).Select(c => new RMS.Domain.ResumeDomain.AchievementsData()
+                achivements = x.Achievements.Select(c => new RMS.Domain.ResumeDomain.AchievementsData()
                 {
                     AchievementName = c.AchievementName,
                     AchievementYear = c.AchievementYear,
                     AchievementDescription = c.AchievementDesc,
                 }).ToList(),
 
-                memberships = context.Memberships.Where(w => w.ResumeId == x.ResumeId).Select(e => new RMS.Domain.ResumeDomain.MembershipsData()
+                memberships = x.Memberships.Select(e => new RMS.Domain.ResumeDomain.MembershipsData()
                 {
                     MembershipName = e.MembershipName,
                     MembershipDescription = e.MembershipDesc,
                 }).ToList(),
 
-                myDetails = context.MyDetails.Where(w => w.ResumeId == x.ResumeId).Select(f => new RMS.Domain.ResumeDomain.MyDetailsData()
+                myDetails = x.MyDetails.Select(f => new RMS.Domain.ResumeDomain.MyDetailsData()
                 {
                     ProfilePicture = f.ProfilePicture,
                     TotalExp = (float)f.TotalExp,
                 }).ToList(),
 
-                workExperience = context.WorkExperiences.Where(w => w.ResumeId == x.ResumeId).Select(g => new RMS.Domain.ResumeDomain.WorkExperienceData()
+                workExperience = x.WorkExperiences.Select(g => new RMS.Domain.ResumeDomain.WorkExperienceData()
                 {
                     ClientDescription = g.ClientDescription,
                     Country = g.Country,
@@ -67,7 +67,7 @@ namespace RmsWebApi.Repository
                     TechnologyStack = g.TechnologyStack,
                 }).ToList(),
 
-                educationDetails = context.EducationDetails.Where(w => w.ResumeId == x.ResumeId).Select(d => new RMS.Domain.ResumeDomain.EducationDetailsData()
+                educationDetails = x.EducationDetails.Select(d => new RMS.Domain.ResumeDomain.EducationDetailsData()
                 {
                     EducationalDetailsId = d.EducationId,
                     CourseName = d.CourseName,
