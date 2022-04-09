@@ -6,6 +6,6 @@
         public int? UserId { get; set; }
         public int ResumeId { get; set; }
 
-        public DateTime ResumeUpdated { get; set; }
+        
     }
 }

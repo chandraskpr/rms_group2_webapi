@@ -60,7 +60,7 @@ namespace rms_web_api_group2.RMSdb
                 entity.HasOne(d => d.Resume)
                     .WithMany(p => p.AboutMes)
                     .HasForeignKey(d => d.ResumeId)
-                    .HasConstraintName("FK_AboutMe_Resume");
+                    .HasConstraintName("FK_AboutMe_Resume").OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Achievement>(entity =>
@@ -84,7 +84,7 @@ namespace rms_web_api_group2.RMSdb
                 entity.HasOne(d => d.Resume)
                     .WithMany(p => p.Achievements)
                     .HasForeignKey(d => d.ResumeId)
-                    .HasConstraintName("FK_Achievements_Resume");
+                    .HasConstraintName("FK_Achievements_Resume").OnDelete(DeleteBehavior.Cascade); 
             });
 
             modelBuilder.Entity<EducationDetail>(entity =>
@@ -123,7 +123,7 @@ namespace rms_web_api_group2.RMSdb
                 entity.HasOne(d => d.Resume)
                     .WithMany(p => p.EducationDetails)
                     .HasForeignKey(d => d.ResumeId)
-                    .HasConstraintName("FK_EducationDetails_Resume");
+                    .HasConstraintName("FK_EducationDetails_Resume").OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Membership>(entity =>
@@ -147,7 +147,7 @@ namespace rms_web_api_group2.RMSdb
                 entity.HasOne(d => d.Resume)
                     .WithMany(p => p.Memberships)
                     .HasForeignKey(d => d.ResumeId)
-                    .HasConstraintName("FK_Membership_Resume");
+                    .HasConstraintName("FK_Membership_Resume").OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<MyDetail>(entity =>
@@ -169,7 +169,7 @@ namespace rms_web_api_group2.RMSdb
                 entity.HasOne(d => d.Resume)
                     .WithMany(p => p.MyDetails)
                     .HasForeignKey(d => d.ResumeId)
-                    .HasConstraintName("FK_MyDetails_Resume");
+                    .HasConstraintName("FK_MyDetails_Resume").OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Resume>(entity =>
@@ -211,7 +211,7 @@ namespace rms_web_api_group2.RMSdb
                 entity.HasOne(d => d.Resume)
                     .WithMany(p => p.Skills)
                     .HasForeignKey(d => d.ResumeId)
-                    .HasConstraintName("FK_Skills_Resume");
+                    .HasConstraintName("FK_Skills_Resume").OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<UserInfo>(entity =>
@@ -276,7 +276,7 @@ namespace rms_web_api_group2.RMSdb
                     .WithMany(p => p.UserNotifications)
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__UserNotif__userI__5070F446");
+                    .HasConstraintName("FK__UserNotif__userI__5070F446").OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<UserResume>(entity =>
@@ -293,12 +293,12 @@ namespace rms_web_api_group2.RMSdb
                     .WithMany(p => p.UserResumes)
                     .HasForeignKey(d => d.ResumeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_UserResume_Resume");
+                    .HasConstraintName("FK_UserResume_Resume").OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UserResumes)
                     .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK_UserResume_UserInfo");
+                    .HasConstraintName("FK_UserResume_UserInfo").OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<WorkExperience>(entity =>
@@ -353,7 +353,7 @@ namespace rms_web_api_group2.RMSdb
                 entity.HasOne(d => d.Resume)
                     .WithMany(p => p.WorkExperiences)
                     .HasForeignKey(d => d.ResumeId)
-                    .HasConstraintName("FK_WorkExperience_Resume");
+                    .HasConstraintName("FK_WorkExperience_Resume").OnDelete(DeleteBehavior.Cascade) ;
             });
 
             OnModelCreatingPartial(modelBuilder);

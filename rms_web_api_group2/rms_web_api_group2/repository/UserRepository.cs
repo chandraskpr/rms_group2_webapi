@@ -1,4 +1,5 @@
-﻿using rms_web_api_group2.data;
+﻿using RMS.Domain.ResumeDomain;
+using rms_web_api_group2.data;
 using rms_web_api_group2.data.User;
 using rms_web_api_group2.repository.Interface;
 using rms_web_api_group2.RMSdb;
@@ -21,7 +22,23 @@ namespace rms_web_api_group2.repository
                 UserName = x.UserName,
                UserEmail = x.UserEmail,
                 UserRole = x.UserRole,
-                
+                Usernotifications = x.UserNotifications.Select(s => new UserNotificationsData()
+                {
+                    NotificationId = s.NotificationId,
+                    UserId = s.UserId,
+                    NotificationDescription = s.NotificationDescription,
+                    CreationDate = s.CreationDate,
+                    NotificationState = s.NotificationState
+
+                }).ToList(),
+                userResume = x.UserResumes.Select(s => new UserResumeDomain()
+                {
+                    UserResumeId = s.UserResumeId,
+                    UserId = s.UserId,
+                    ResumeId = s.ResumeId,
+                    
+                }).ToList(),
+
             }).ToList();
             return (records);
         }
@@ -33,9 +50,30 @@ namespace rms_web_api_group2.repository
                 UserName = userdata.UserName,
                 UserEmail = userdata.UserEmail,
                 UserRole = userdata.UserRole,
+            };
+                foreach (var record in userdata.Usernotifications)
+            {
+                res.UserNotifications.Add(new UserNotification()
+                {
+                    
+                    NotificationId = record.NotificationId,
+                    UserId = record.UserId,
+                    NotificationDescription = record.NotificationDescription,
+                    CreationDate = record.CreationDate,
+                    NotificationState = record.NotificationState
+                });
+            }
+                foreach (var record in userdata.userResume)
+            {
+                res.UserResumes.Add(new UserResume()
+                {
+                    UserResumeId = record.UserResumeId,
+                    UserId = record.UserId,
+                    ResumeId = record.ResumeId,
+                });
+            }
 
-
-            }; 
+            base.Insert(res);
         }
            
             public void Delete(int UserId)
@@ -57,6 +95,16 @@ namespace rms_web_api_group2.repository
                 res.UserName = userdata.UserName;
                 res.UserEmail = userdata.UserEmail;
                 res.UserRole = userdata.UserRole;
+
+                foreach (var record in userdata.userResume)
+                {
+                    res.UserResumes.Add(new UserResume()
+                    {
+                        UserResumeId = record.UserResumeId,
+                        UserId = record.UserId,
+                        ResumeId = record.ResumeId,
+                    });
+                }
             };
             base.Update(res);
         }
