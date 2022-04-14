@@ -2,6 +2,7 @@
 using rms_web_api_group2.repository.Interface;
 using rms_web_api_group2.RMSdb;
 using rms_web_api_group2.data;
+using Microsoft.EntityFrameworkCore;
 
 namespace rms_web_api_group2.repository
 {
@@ -169,12 +170,28 @@ namespace rms_web_api_group2.repository
           
         public void Delete(int ResumeId)
         {
-            var res = base.SelectAll().Find(e=>e.ResumeId==ResumeId);
+            //var res = base.SelectAll().Find(e=>e.ResumeId==ResumeId);
+            //if (res != null)
+            //{
+            // base.Delete(res);
+
+
+
+            // }
+            var res = this.entitySet
+               .Include(x => x.MyDetails)
+               .Include(x => x.Memberships)
+               .Include(x => x.AboutMes)
+               .Include(x => x.Achievements)
+               .Include(x => x.EducationDetails)
+               .Include(x => x.Skills)
+               .Include(x => x.WorkExperiences)
+               .Include(x => x.MyDetails)
+               .Include(x => x.UserResumes)
+               .FirstOrDefault(x => x.ResumeId == ResumeId);
+
             if (res != null)
-            {
                 base.Delete(res);
-            }
-            
         }
         public void Update(int ResumeId, ResumeDomain resume)
         {

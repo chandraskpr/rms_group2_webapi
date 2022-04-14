@@ -7,7 +7,7 @@ namespace rms_web_api_group2.repository
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected readonly RMSContext context;
-        private DbSet<T> entitySet;
+        protected DbSet<T> entitySet;
 
         public BaseRepository(RMSContext context)
         {

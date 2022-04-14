@@ -1,4 +1,5 @@
-﻿using RMS.Domain.ResumeDomain;
+﻿using Microsoft.EntityFrameworkCore;
+using RMS.Domain.ResumeDomain;
 using rms_web_api_group2.data;
 using rms_web_api_group2.data.User;
 using rms_web_api_group2.repository.Interface;
@@ -78,13 +79,15 @@ namespace rms_web_api_group2.repository
            
             public void Delete(int UserId)
             {
-                var res = base.SelectAll().Find(e => e.UserId == UserId);
-                if (res != null)
-                {
-                    base.Delete(res);
-                }
+            var res = this.entitySet
+               .Include(x => x.UserNotifications)
+               .Include(x => x.UserResumes)
 
-            }
+               .FirstOrDefault(x => x.UserId == UserId);
+            if (res != null)
+                base.Delete(res);
+
+        }
         public void Update(int UserId, UserData userdata)
         {
             var res = base.SelectAll().Find(e => e.UserId == UserId);
