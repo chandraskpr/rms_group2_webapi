@@ -20,19 +20,23 @@ options.UseLazyLoadingProxies().UseSqlServer(connectionString)
 );
 
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+
 builder.Services.AddTransient<IResumeRepository, ResumeRepository>();
 
-//builder.Services.AddCors(c =>
-//{
-//    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-//});
+builder.Services.AddTransient<IRoleMaster, RoleMasterRepository>();
 
-builder.Services.AddCors();
+builder.Services.AddTransient<IDesignationMaster, DesignationMasterRepository>();
 
-//builder.Services.AddControllersWithViews().AddJsonOptions(options =>
-//options.JsonSerializerOptions.ReferenceHandler = options.JsonSerializerOptions.ReferenceHandler ?? ReferenceHandler.IgnoreCycles)
-//.AddJsonOptions(options => options.JsonSerializerOptions.PropertyNameCaseInsensitive = true);
+builder.Services.AddTransient<IProjectMaster, ProjectMasterRepository>();
 
+builder.Services.AddCors(c =>
+{
+    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+});
+
+builder.Services.AddControllersWithViews().AddJsonOptions(options =>
+options.JsonSerializerOptions.ReferenceHandler = options.JsonSerializerOptions.ReferenceHandler ?? ReferenceHandler.IgnoreCycles)
+.AddJsonOptions(options => options.JsonSerializerOptions.PropertyNameCaseInsensitive = true);
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

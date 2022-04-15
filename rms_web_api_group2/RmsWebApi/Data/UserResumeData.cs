@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RmsWebApi.RMS_DB
+﻿namespace RmsWebApi.Data
 {
     public class UserResumeData
     {
@@ -9,7 +6,5 @@ namespace RmsWebApi.RMS_DB
         public int? UserId { get; set; }
         public int ResumeId { get; set; }
 
-        /*public virtual Resume Resume { get; set; } = null!;
-        public virtual UserInfo? User { get; set; }*/
     }
 }
