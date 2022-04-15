@@ -1,4 +1,5 @@
-﻿using RmsWebApi.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using RmsWebApi.Data;
 using RmsWebApi.Repository.Interfaces;
 using RmsWebApi.RMS_DB;
 
@@ -23,36 +24,54 @@ namespace RmsWebApi.Repository
                 UpdationDate = x.UpdationDate,
                 CreationDate = x.CreationDate,
 
-                SkillList = x.Skills.Select(s => new RMS.Domain.ResumeDomain.SkillsData()
+                SkillList = x.Skills.Select(a => new RMS.Domain.ResumeDomain.SkillsData()
                 {
-                    Category = s.Category,
-
-                }).ToList(),
+                    Category = a.Category,
+                }
+                ).ToList(),
 
                 aboutMe = x.AboutMes.Select(b => new RMS.Domain.ResumeDomain.AboutMeData()
                 {
                     KeyPoints = b.KeyPoints,
                     MainDescription = b.MainDescription,
-                }).ToList(),
+                }
+                ).ToList(),
 
                 achivements = x.Achievements.Select(c => new RMS.Domain.ResumeDomain.AchievementsData()
                 {
                     AchievementName = c.AchievementName,
                     AchievementYear = c.AchievementYear,
                     AchievementDescription = c.AchievementDesc,
-                }).ToList(),
+                }
+                ).ToList(),
+
+                educationDetails = x.EducationDetails.Select(d => new RMS.Domain.ResumeDomain.EducationDetailsData()
+                {
+                    EducationalDetailsId = d.EducationId,
+                    CourseName = d.CourseName,
+                    Stream = d.Specialization,
+                    InstitutionName = d.InstituteName,
+                    PassingYear = d.PassingYear,
+                    Marks = (float)d.Marks,
+                    University = d.University,
+                }
+                ).ToList(),
 
                 memberships = x.Memberships.Select(e => new RMS.Domain.ResumeDomain.MembershipsData()
                 {
                     MembershipName = e.MembershipName,
                     MembershipDescription = e.MembershipDesc,
-                }).ToList(),
+                }
+                ).ToList(),
 
                 myDetails = x.MyDetails.Select(f => new RMS.Domain.ResumeDomain.MyDetailsData()
                 {
                     ProfilePicture = f.ProfilePicture,
                     TotalExp = (float)f.TotalExp,
-                }).ToList(),
+                    UserName = f.UserName,
+                    Role = f.Role,
+                }
+                ).ToList(),
 
                 workExperience = x.WorkExperiences.Select(g => new RMS.Domain.ResumeDomain.WorkExperienceData()
                 {
@@ -65,24 +84,14 @@ namespace RmsWebApi.Repository
                     EndDate = g.EndDate,
                     BusinessSolution = g.BusinessSolution,
                     TechnologyStack = g.TechnologyStack,
-                }).ToList(),
-
-                educationDetails = x.EducationDetails.Select(d => new RMS.Domain.ResumeDomain.EducationDetailsData()
-                {
-                    EducationalDetailsId = d.EducationId,
-                    CourseName = d.CourseName,
-                    Stream = d.Specialization,
-                    InstitutionName = d.InstituteName,
-                    PassingYear = d.PassingYear,
-                    Marks = (float)d.Marks,
-                    University = d.University,
-                }).ToList(),
+                }
+                ).ToList(),
 
             }).ToList();
             return records;
         }
 
-        public void Create(ResumeData resume)
+        public ResumeData Create(ResumeData resume)
         {
             var res = new Resume()
             {
@@ -96,91 +105,126 @@ namespace RmsWebApi.Repository
                 res.Skills.Add(new Skill()
                 {
                     Category = record.Category,
-                });
-            }
-
+                }
+                );
+            };
             foreach (var record in resume.aboutMe)
             {
                 res.AboutMes.Add(new AboutMe()
                 {
                     MainDescription = record.MainDescription,
                     KeyPoints = record.KeyPoints,
-                });
+                }
+                );
             }
 
-            foreach (var record in resume.myDetails)
+            foreach (var records in resume.myDetails)
             {
                 res.MyDetails.Add(new MyDetail()
                 {
-                    ProfilePicture = record.ProfilePicture,
-                    TotalExp = record.TotalExp,
-                });
+                    ProfilePicture = records.ProfilePicture,
+                    TotalExp = records.TotalExp,
+                    UserName = records.UserName,
+                    Role = records.Role,
+                }
+                );
             }
-            foreach (var record in resume.achivements)
+
+            foreach (var records in resume.achivements)
             {
                 res.Achievements.Add(new Achievement()
                 {
-                    AchievementName = record.AchievementName,
-                    AchievementYear = record.AchievementYear,
-                    AchievementDesc = record.AchievementDescription,
-                });
+                    AchievementName = records.AchievementName,
+                    AchievementYear = records.AchievementYear,
+                    AchievementDesc = records.AchievementDescription,
+                }
+                );
             }
-            foreach (var record in resume.memberships)
+
+            foreach (var records in resume.memberships)
             {
                 res.Memberships.Add(new Membership()
                 {
-                    MembershipName = record.MembershipName,
-                    MembershipDesc = record.MembershipDescription,
-                });
+                    MembershipName = records.MembershipName,
+                    MembershipDesc = records.MembershipDescription,
+                }
+                );
             }
-            foreach (var record in resume.workExperience)
+
+            foreach (var records in resume.workExperience)
             {
                 res.WorkExperiences.Add(new WorkExperience()
                 {
-                    ClientDescription = record.ClientDescription,
-                    Country = record.Country,
-                    ProjectName = record.ProjectName,
-                    ProjectResponsibilities = record.ProjectResponsibilities,
-                    ProjectRole = record.ProjectRole,
-                    BusinessSolution = record.BusinessSolution,
-                    StartDate = record.StartDate,
-                    EndDate = record.EndDate,
-                    TechnologyStack = record.TechnologyStack,
-                });
+                    ClientDescription = records.ClientDescription,
+                    Country = records.Country,
+                    ProjectName = records.ProjectName,
+                    ProjectResponsibilities = records.ProjectResponsibilities,
+                    ProjectRole = records.ProjectRole,
+                    BusinessSolution = records.BusinessSolution,
+                    StartDate = records.StartDate,
+                    EndDate = records.EndDate,
+                    TechnologyStack = records.TechnologyStack,
+                }
+                );
             }
 
-            foreach (var record in resume.educationDetails)
+            foreach (var records in resume.educationDetails)
             {
                 res.EducationDetails.Add(new EducationDetail()
                 {
-                    CourseName = record.CourseName,
-                    InstituteName = record.InstitutionName,
-                    Specialization = record.Stream,
-                    PassingYear = record.PassingYear,
-                    Marks = record.Marks,
-                    University = record.University,
-                });
+                    CourseName = records.CourseName,
+                    InstituteName = records.InstitutionName,
+                    Specialization = records.Stream,
+                    PassingYear = records.PassingYear,
+                    Marks = records.Marks,
+                    University = records.University,
+                }
+                );
             }
-            base.Create(res);
+
+            var response = base.Create(res);
+            if (response != null)
+            {
+                return new ResumeData()
+                {
+                    ResumeId = response.ResumeId,
+                    ResumeStatus = response.ResumeStatus,
+                };
+            }
+            return null;
+
         }
 
 
         public void Delete(int ResumeId)
         {
 
-            var res = base.SelectAll().FirstOrDefault(x => x.ResumeId == ResumeId);
+            var res = this.entitySet
+                .Include(x => x.MyDetails)
+                .Include(x => x.Memberships)
+                .Include(x => x.AboutMes)
+                .Include(x => x.Achievements)
+                .Include(x => x.EducationDetails)
+                .Include(x => x.UserResumes)
+                .Include(x => x.Skills)
+                .Include(x => x.WorkExperiences)
+                .FirstOrDefault(x => x.ResumeId == ResumeId);
 
-            /*context.AboutMes.RemoveRange(res.AboutMes);
-            context.Memberships.RemoveRange(res.Memberships);
-            context.MyDetails.RemoveRange(res.MyDetails);
-            context.Achievements.RemoveRange(res.Achievements);
-            context.EducationDetails.RemoveRange(res.EducationDetails);
-            context.Skills.RemoveRange(res.Skills);
-            context.WorkExperiences.RemoveRange(res.WorkExperiences);*/
+            //var res = base.SelectAll().FirstOrDefault(x => x.ResumeId == ResumeId);
+
+            //context.AboutMes.RemoveRange(res.AboutMes);
+            //context.Memberships.RemoveRange(res.Memberships);
+            //context.MyDetails.RemoveRange(res.MyDetails);
+            //context.Achievements.RemoveRange(res.Achievements);
+            //context.EducationDetails.RemoveRange(res.EducationDetails);
+            //context.Skills.RemoveRange(res.Skills);
+            //context.WorkExperiences.RemoveRange(res.WorkExperiences);
+
             if (res != null)
             {
                 base.Delete(res);
             }
+
         }
 
         public void Update(int ResumeId, ResumeData resume)
@@ -198,7 +242,8 @@ namespace RmsWebApi.Repository
                     res.Skills.Add(new Skill()
                     {
                         Category = record.Category,
-                    });
+                    }
+                    );
                 }
 
                 foreach (var record in resume.aboutMe)
@@ -207,61 +252,70 @@ namespace RmsWebApi.Repository
                     {
                         MainDescription = record.MainDescription,
                         KeyPoints = record.KeyPoints,
-                    });
+                    }
+                    );
                 }
 
-                foreach (var record in resume.myDetails)
+                foreach (var records in resume.myDetails)
                 {
                     res.MyDetails.Add(new MyDetail()
                     {
-                        ProfilePicture = record.ProfilePicture,
-                        TotalExp = record.TotalExp,
-                    });
+                        ProfilePicture = records.ProfilePicture,
+                        TotalExp = records.TotalExp,
+                    }
+                    );
                 }
-                foreach (var record in resume.achivements)
+
+                foreach (var records in resume.achivements)
                 {
                     res.Achievements.Add(new Achievement()
                     {
-                        AchievementName = record.AchievementName,
-                        AchievementYear = record.AchievementYear,
-                        AchievementDesc = record.AchievementDescription,
-                    });
+                        AchievementName = records.AchievementName,
+                        AchievementYear = records.AchievementYear,
+                        AchievementDesc = records.AchievementDescription,
+                    }
+                    );
                 }
-                foreach (var record in resume.memberships)
+
+                foreach (var records in resume.memberships)
                 {
                     res.Memberships.Add(new Membership()
                     {
-                        MembershipName = record.MembershipName,
-                        MembershipDesc = record.MembershipDescription,
-                    });
+                        MembershipName = records.MembershipName,
+                        MembershipDesc = records.MembershipDescription,
+                    }
+                    );
                 }
-                foreach (var record in resume.workExperience)
+
+                foreach (var records in resume.workExperience)
                 {
                     res.WorkExperiences.Add(new WorkExperience()
                     {
-                        ClientDescription = record.ClientDescription,
-                        Country = record.Country,
-                        ProjectName = record.ProjectName,
-                        ProjectResponsibilities = record.ProjectResponsibilities,
-                        ProjectRole = record.ProjectRole,
-                        BusinessSolution = record.BusinessSolution,
-                        StartDate = record.StartDate,
-                        EndDate = record.EndDate,
-                        TechnologyStack = record.TechnologyStack,
-                    });
+                        ClientDescription = records.ClientDescription,
+                        Country = records.Country,
+                        ProjectName = records.ProjectName,
+                        ProjectResponsibilities = records.ProjectResponsibilities,
+                        ProjectRole = records.ProjectRole,
+                        BusinessSolution = records.BusinessSolution,
+                        StartDate = records.StartDate,
+                        EndDate = records.EndDate,
+                        TechnologyStack = records.TechnologyStack,
+                    }
+                    );
                 }
 
-                foreach (var record in resume.educationDetails)
+                foreach (var records in resume.educationDetails)
                 {
                     res.EducationDetails.Add(new EducationDetail()
                     {
-                        CourseName = record.CourseName,
-                        InstituteName = record.InstitutionName,
-                        Specialization = record.Stream,
-                        PassingYear = record.PassingYear,
-                        Marks = record.Marks,
-                        University = record.University,
-                    });
+                        CourseName = records.CourseName,
+                        InstituteName = records.InstitutionName,
+                        Specialization = records.Stream,
+                        PassingYear = records.PassingYear,
+                        Marks = records.Marks,
+                        University = records.University,
+                    }
+                    );
                 }
 
                 base.Update(res);
@@ -269,7 +323,5 @@ namespace RmsWebApi.Repository
             }
 
         }
-
-
     }
 }

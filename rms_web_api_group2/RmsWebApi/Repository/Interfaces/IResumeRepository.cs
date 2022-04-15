@@ -7,7 +7,7 @@ namespace RmsWebApi.Repository.Interfaces
     {
         public List<ResumeData> GetAll();
 
-        public void Create(ResumeData resume);
+        public ResumeData Create(ResumeData resume);
 
         public void Delete(int ResumeId);
 

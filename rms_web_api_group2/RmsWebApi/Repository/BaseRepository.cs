@@ -22,10 +22,11 @@ namespace RmsWebApi.Repository
         {
             return entitySet.ToList();
         }
-        public void Create(T entity)
+        public T Create(T entity)
         {
-            this.entitySet.Add(entity);
-            this.context.SaveChanges();
+            entitySet.Add(entity);
+            context.SaveChanges();
+            return entity;
         }
         public void Update(T entity)
         {
