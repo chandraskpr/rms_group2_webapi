@@ -4,13 +4,13 @@ namespace RmsWebApi.Repository.Interfaces
 {
     public interface IDesignationMaster : IBaseRepository<DesignationMaster>
     {
-        public List<DesignationMasterDomain> GetAll();
+        public List<DesignationMasterData> GetAll();
 
-        public int Create(DesignationMasterDomain designation);
+        public int Create(DesignationMasterData designation);
 
         public void Delete(int degId);
-        public List<DesignationMasterDomain> GetActiveDesignations();
+        public List<DesignationMasterData> GetActiveDesignations();
 
-        public void Update(int degId, DesignationMasterDomain designation);
+        public void Update(int degId, DesignationMasterData designation);
     }
 }

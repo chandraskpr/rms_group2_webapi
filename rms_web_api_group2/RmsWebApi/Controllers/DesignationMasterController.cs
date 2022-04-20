@@ -16,19 +16,25 @@ namespace RmsWebApi.Controllers
         }
         // GET: api/<DesignationMasterController>
         [HttpGet]
-        public List<DesignationMasterDomain> Get()
+        public List<DesignationMasterData> Get()
         {
             return this.designationMasterRepository.GetAll();
         }
+        [HttpGet]
+        [Route("GetActiveDesignation")]
+        public List<DesignationMasterData> GetActiveDesignation()
+        {
+            return this.designationMasterRepository.GetActiveDesignations();
+        }
         [HttpGet("{isDeleted}")]
-        public DesignationMasterDomain Get(bool isDeleted)
+        public DesignationMasterData Get(bool isDeleted)
         {
             return this.designationMasterRepository.GetAll().FirstOrDefault(d => d.IsDeleted == isDeleted);
         }
 
         // POST api/<RoleMasterController>
         [HttpPost]
-        public int Post([FromBody] DesignationMasterDomain value)
+        public int Post([FromBody] DesignationMasterData value)
         {
             return this.designationMasterRepository.Create(value);
 
@@ -36,7 +42,7 @@ namespace RmsWebApi.Controllers
 
         // PUT api/<RoleMasterController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] DesignationMasterDomain value)
+        public void Put(int id, [FromBody] DesignationMasterData value)
         {
             this.designationMasterRepository.Update(id, value);
         }

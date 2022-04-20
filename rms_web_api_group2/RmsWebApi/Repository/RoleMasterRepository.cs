@@ -25,7 +25,7 @@ namespace RmsWebApi.Repository
         }
         public List<RoleMasterData> GetActiveRole()
         {
-            var result = base.SelectAll().Select(x => new RoleMasterData()
+            var result = base.SelectAll().Where(x => x.IsDeleted.HasValue && !x.IsDeleted.Value).Select(x => new RoleMasterData()
             {
                 RoleId = x.RoleId,
                 RoleDescription = x.RoleDescription,

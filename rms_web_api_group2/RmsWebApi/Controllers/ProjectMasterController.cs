@@ -20,8 +20,14 @@ namespace RmsWebApi.Controllers
         {
             return this.projectMasterRepository.GetAll();
         }
+        [HttpGet]
+        [Route("GetActiveProjects")]
+        public List<ProjectMasterData> GetActiveProjects()
+        {
+            return this.projectMasterRepository.GetActiveProject();
+        }
         [HttpGet("{isDeleted}")]
-        public ProjectMasterData GetActiveRoll(bool isDeleted)
+        public ProjectMasterData GetActiveProject(bool isDeleted)
         {
             return this.projectMasterRepository.GetAll().FirstOrDefault(x => x.IsDeleted == isDeleted);
         }

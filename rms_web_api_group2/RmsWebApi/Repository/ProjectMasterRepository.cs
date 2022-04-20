@@ -23,7 +23,7 @@ namespace RmsWebApi.Repository
         }
         public List<ProjectMasterData> GetActiveProject()
         {
-            var result = base.SelectAll().Select(x => new ProjectMasterData()
+            var result = base.SelectAll().Where(x => x.IsDeleted.HasValue && !x.IsDeleted.Value).Select(x => new ProjectMasterData()
             {
                 ProjectId = x.ProjectId,
                 ProjectName = x.ProjectName,

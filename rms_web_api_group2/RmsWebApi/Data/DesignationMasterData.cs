@@ -1,6 +1,6 @@
 ﻿namespace RmsWebApi.Data
 {
-    public class DesignationMasterDomain
+    public class DesignationMasterData
     {
         public int DesignationId { get; set; }
         public string? DesignationName { get; set; }

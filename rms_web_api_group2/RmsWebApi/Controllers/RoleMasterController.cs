@@ -23,6 +23,12 @@ namespace RmsWebApi.Controllers
         {
             return this.roleMasterRepository.GetAll();
         }
+        [HttpGet]
+        [Route("GetActiveRoles")]
+        public List<RoleMasterData> GetActiveRoles()
+        {
+            return this.roleMasterRepository.GetActiveRole();
+        }
 
         [HttpGet("{isDeleted}")]
         public RoleMasterData Get(bool isDeleted)

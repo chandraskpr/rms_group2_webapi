@@ -11,9 +11,9 @@ namespace RmsWebApi.Repository
         {
         }
 
-        public List<DesignationMasterDomain> GetAll()
+        public List<DesignationMasterData> GetAll()
         {
-            var designations = base.SelectAll().Select(x => new DesignationMasterDomain()
+            var designations = base.SelectAll().Select(x => new DesignationMasterData()
             {
                 DesignationId = x.DesignationId,
                 DesignationName = x.DesignationName,
@@ -23,9 +23,9 @@ namespace RmsWebApi.Repository
             return designations;
 
         }
-        public List<DesignationMasterDomain> GetActiveDesignations()
+        public List<DesignationMasterData> GetActiveDesignations()
         {
-            var result = base.SelectAll().Select(x => new DesignationMasterDomain()
+            var result = base.SelectAll().Where(x => x.IsDeleted.HasValue && !x.IsDeleted.Value).Select(x => new DesignationMasterData()
             {
                 DesignationId = x.DesignationId,
                 DesignationName = x.DesignationName,
@@ -34,7 +34,7 @@ namespace RmsWebApi.Repository
             }).ToList();
             return result;
         }
-        public int Create(DesignationMasterDomain designation)
+        public int Create(DesignationMasterData designation)
         {
             var res = new DesignationMaster()
             {
@@ -56,7 +56,7 @@ namespace RmsWebApi.Repository
                 base.Delete(res);
         }
 
-        public void Update(int desId, DesignationMasterDomain designation)
+        public void Update(int desId, DesignationMasterData designation)
         {
             var res = base.SelectAll().FirstOrDefault(x => x.DesignationId == desId);
             if (res != null)
