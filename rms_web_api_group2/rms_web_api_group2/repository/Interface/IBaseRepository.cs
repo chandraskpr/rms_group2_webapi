@@ -7,7 +7,7 @@ namespace rms_web_api_group2.repository.Interface
      {
         List<T> SelectAll();
        
-        void Insert(T obj);
+        T Insert(T obj);
         void Update(T obj);
         void Delete(T entity);
        

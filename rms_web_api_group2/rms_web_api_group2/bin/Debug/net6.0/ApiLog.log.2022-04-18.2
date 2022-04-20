@@ -1,0 +1,1097 @@
+2022-04-18 11:22:32,959  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 11:22:33,009  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 11:22:33,014  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 11:22:33,019  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:22:33,028  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:22:33,034  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:22:33,038  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:22:33,044  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 11:22:33,049  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 11:29:52,934  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 6.0.3 initialized 'RMSContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: using lazy loading proxies 
+ 2022-04-18 11:29:52,974  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[resumeId], [r].[creationDate], [r].[resumeStatus], [r].[resumeTitle], [r].[updationDate]
+FROM [Resume] AS [r]
+ 2022-04-18 11:29:52,979  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 11:29:52,984  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:52,990  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:52,997  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,110  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (81ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,126  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,150  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (16ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,161  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 11:29:53,169  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,175  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,178  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,182  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,188  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,192  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,196  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 11:29:53,200  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,205  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,210  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,215  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,221  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,225  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,230  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 11:29:53,234  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,239  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,245  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,249  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,255  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,260  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,264  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 11:29:53,269  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,277  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,281  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,285  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,292  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,297  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,300  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 11:29:53,306  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,311  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,315  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,321  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,327  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,331  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,336  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 11:29:53,345  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,350  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,357  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,363  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,367  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,373  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,379  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 11:29:53,387  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,396  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,400  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,405  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,410  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,414  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,418  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 11:29:53,424  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,428  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,432  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,437  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,442  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,446  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,450  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 11:29:53,456  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,460  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,465  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,471  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,477  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 11:29:53,481  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,793  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 6.0.3 initialized 'RMSContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: using lazy loading proxies 
+ 2022-04-18 12:14:21,818  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[resumeId], [r].[creationDate], [r].[resumeStatus], [r].[resumeTitle], [r].[updationDate]
+FROM [Resume] AS [r]
+ 2022-04-18 12:14:21,826  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:14:21,834  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,845  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,854  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,862  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,879  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,887  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,895  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:14:21,903  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,911  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,918  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,924  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,933  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,937  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,942  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:14:21,949  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,954  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,960  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,966  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,971  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,978  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:14:21,985  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:14:21,992  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,001  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,008  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,018  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,025  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,039  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,046  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:14:22,053  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,060  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,069  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,075  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,084  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,092  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,106  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:14:22,118  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,125  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,133  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,139  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,146  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,155  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,160  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:14:22,168  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,174  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,179  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,186  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,192  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,197  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,203  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:14:22,207  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,212  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,218  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,224  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,234  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,241  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,250  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:14:22,257  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,265  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,272  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,279  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,287  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,295  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,304  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:14:22,312  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,415  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (94ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,422  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,436  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,445  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:14:22,477  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,182  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 6.0.3 initialized 'RMSContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: using lazy loading proxies 
+ 2022-04-18 12:16:38,193  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[resumeId], [r].[creationDate], [r].[resumeStatus], [r].[resumeTitle], [r].[updationDate]
+FROM [Resume] AS [r]
+ 2022-04-18 12:16:38,201  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:16:38,207  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,212  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,231  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,238  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,246  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,254  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,259  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:16:38,265  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,272  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,277  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,282  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,289  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,295  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,303  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:16:38,308  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,314  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,320  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,326  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,332  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,339  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,344  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:16:38,349  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,355  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,360  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,365  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,372  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,378  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,382  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:16:38,389  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,396  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,401  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,407  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,413  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,425  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,430  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:16:38,437  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,442  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,448  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,454  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,459  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,465  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,470  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:16:38,477  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,482  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,488  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,492  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,496  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,503  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,508  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:16:38,513  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,517  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,526  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,532  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,539  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,543  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,549  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:16:38,556  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,561  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,567  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,572  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,578  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,587  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,595  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:16:38,600  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,607  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,612  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,617  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,623  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:16:38,629  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,651  INFO Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 6.0.3 initialized 'RMSContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.3' with options: using lazy loading proxies 
+ 2022-04-18 12:18:21,685  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [r].[resumeId], [r].[creationDate], [r].[resumeStatus], [r].[resumeTitle], [r].[updationDate]
+FROM [Resume] AS [r]
+ 2022-04-18 12:18:21,693  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:18:21,699  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,707  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,714  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,720  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,728  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,735  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,744  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:18:21,753  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,760  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,766  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,773  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,779  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,784  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,791  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:18:21,796  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,802  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,808  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,815  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,820  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,827  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,833  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:18:21,839  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,844  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,850  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,857  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,862  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,868  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,875  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:18:21,883  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,894  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,900  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,909  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,920  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,928  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,933  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:18:21,941  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,947  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,954  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,983  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,990  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:18:21,995  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:18:22,000  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:18:22,008  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:22,012  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[achievementId], [a].[achievementName], [a].[resumeId]
+FROM [Achievements] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 2022-04-18 12:18:22,016  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[membershipId], [m].[membershipName], [m].[resumeId]
+FROM [Membership] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:22,020  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [m].[userdetailsId], [m].[name], [m].[profilePicture], [m].[resumeId], [m].[role], [m].[totalExp]
+FROM [MyDetails] AS [m]
+WHERE [m].[resumeId] = @__p_0
+ 2022-04-18 12:18:22,026  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [w].[workExperienceId], [w].[businessSolution], [w].[clientDescription], [w].[country], [w].[endDate], [w].[projectName], [w].[projectResponsibilities], [w].[projectRole], [w].[resumeId], [w].[startDate], [w].[technologyStack]
+FROM [WorkExperience] AS [w]
+WHERE [w].[resumeId] = @__p_0
+ 2022-04-18 12:18:22,030  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [e].[educationId], [e].[courseName], [e].[instituteName], [e].[marks], [e].[passingYear], [e].[resumeId], [e].[specialization], [e].[university]
+FROM [EducationDetails] AS [e]
+WHERE [e].[resumeId] = @__p_0
+ 2022-04-18 12:18:22,034  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [s].[skillId], [s].[category], [s].[resumeID]
+FROM [Skills] AS [s]
+WHERE [s].[resumeID] = @__p_0
+ 2022-04-18 12:18:22,037  INFO Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [a].[aboutMeId], [a].[keyPoints], [a].[mainDescription], [a].[resumeId]
+FROM [AboutMe] AS [a]
+WHERE [a].[resumeId] = @__p_0
+ 

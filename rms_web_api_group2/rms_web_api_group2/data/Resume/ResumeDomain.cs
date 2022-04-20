@@ -13,6 +13,9 @@ namespace rms_web_api_group2.data.Resume
             memberships = new List<MembershipDomain>();
             myDetails = new List<MyDetailDomain>();
             workExperience = new List<WorkExperienceDomain>();
+            userResumes = new List<UserResumeDomain>();
+            certifications = new List<CertificationDomain>();
+            trainings = new List<TrainingDomain>();
         }
         public int ResumeId { get; set; }
         public string ResumeTitle { get; set; } 
@@ -27,5 +30,8 @@ namespace rms_web_api_group2.data.Resume
         public List<MembershipDomain> memberships { get; set; }
         public List<MyDetailDomain> myDetails { get; set; }
         public List<WorkExperienceDomain> workExperience { get; set; }
+        public List<UserResumeDomain> userResumes { get; set; }
+        public List<CertificationDomain> certifications { get; set; }
+        public List<TrainingDomain> trainings { get; set; }
     }
 }

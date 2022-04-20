@@ -15,6 +15,8 @@ namespace rms_web_api_group2.RMSdb
             Skills = new HashSet<Skill>();
             UserResumes = new HashSet<UserResume>();
             WorkExperiences = new HashSet<WorkExperience>();
+            Certifications = new HashSet<Certification>();
+            Trainings = new HashSet<Training>();
         }
 
         public int ResumeId { get; set; }
@@ -31,5 +33,7 @@ namespace rms_web_api_group2.RMSdb
         public virtual ICollection<Skill> Skills { get; set; }
         public virtual ICollection<UserResume> UserResumes { get; set; }
         public virtual ICollection<WorkExperience> WorkExperiences { get; set; }
+        public virtual ICollection<Certification> Certifications { get; set; }
+        public virtual ICollection<Training> Trainings { get; set; }
     }
 }

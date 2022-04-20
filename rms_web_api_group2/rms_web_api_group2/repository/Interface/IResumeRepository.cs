@@ -9,8 +9,8 @@ namespace rms_web_api_group2.repository.Interface
      {
         List<ResumeDomain> SelectAll();
 
-        void Insert(ResumeDomain obj);
-        void Update(int id,ResumeDomain obj);
-        void Delete(int entity);
+        public ResumeDomain Insert(ResumeDomain obj);
+        public void Update(int id,ResumeDomain obj);
+        public void Delete(int entity);
     }
 }

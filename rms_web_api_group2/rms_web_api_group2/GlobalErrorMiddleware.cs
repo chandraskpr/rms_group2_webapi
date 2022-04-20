@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Net;
 
-namespace RmsWebApi
+namespace rms_web_api_group2
 {
     public class GlobalErrorMiddleware
     {

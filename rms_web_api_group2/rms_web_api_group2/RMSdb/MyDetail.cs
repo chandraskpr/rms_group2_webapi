@@ -9,6 +9,8 @@ namespace rms_web_api_group2.RMSdb
         public int? ResumeId { get; set; }
         public string? ProfilePicture { get; set; }
         public double? TotalExp { get; set; }
+        public string? Name { get; set; }
+        public string? Role { get; set; }
 
         public virtual Resume? Resume { get; set; }
     }

@@ -3,6 +3,7 @@ using rms_web_api_group2.repository.Interface;
 using rms_web_api_group2.RMSdb;
 using rms_web_api_group2.data;
 using Microsoft.EntityFrameworkCore;
+using RMS.Domain.ResumeDomain;
 
 namespace rms_web_api_group2.repository
 {
@@ -34,6 +35,7 @@ namespace rms_web_api_group2.repository
 
                 aboutMe = x.AboutMes.Select(b => new RMS.Domain.ResumeDomain.AboutMeDomain()
                 {
+                    AboutMeId = b.AboutMeId,
                     KeyPoints = b.KeyPoints,
                     MainDescription = b.MainDescription,
                 }).ToList(),
@@ -41,20 +43,22 @@ namespace rms_web_api_group2.repository
                 achivements =x.Achievements.Select(c => new RMS.Domain.ResumeDomain.AchievementDomain()
                 {
                     AchievementName = c.AchievementName,
-                    AchievementYear = c.AchievementYear,
-                    AchievementDesc = c.AchievementDesc,
+                   
+                    
                 }).ToList(),
 
                 memberships = x.Memberships.Select(e => new RMS.Domain.ResumeDomain.MembershipDomain()
                 {
                     MembershipName = e.MembershipName,
-                    MembershipDesc = e.MembershipDesc,
+                   
                 }).ToList(),
 
                 myDetails = x.MyDetails.Select(f => new RMS.Domain.ResumeDomain.MyDetailDomain()
                 {
                     ProfilePicture = f.ProfilePicture,
                     TotalExp = (float)f.TotalExp,
+                    UserName = f.Name,
+                    Role = f.Role
                 }).ToList(),
 
                 workExperience = x.WorkExperiences.Select(g => new RMS.Domain.ResumeDomain.WorkExperienceDomain()
@@ -80,12 +84,30 @@ namespace rms_web_api_group2.repository
                     Marks = (float)d.Marks,
                     University = d.University,
                 }).ToList(),
+                //userResumes = x.UserResumes.Select(p => new UserResumeDomain()
+                //{
+                //    UserId = p.UserId,
+                //    ResumeId = p.ResumeId,
+                //    UserResumeId = p.UserResumeId,
+                //}).ToList(),
+
+                certifications = x.Certifications.Select(p => new CertificationDomain()
+                {
+                    certificationId = p.certificationId,
+                    certificationName = p.certificationName,
+                }).ToList(),
+
+                trainings = x.Trainings.Select(p => new TrainingDomain()
+                {
+                    TrainingId = p.TrainingId,
+                    Trainingname = p.Trainingname
+                }).ToList()
 
             }).ToList();
             return records;
         }
            
-        public void Insert(ResumeDomain resume)
+        public ResumeDomain Insert(ResumeDomain resume)
         {
             var res = new Resume()
             {
@@ -118,6 +140,8 @@ namespace rms_web_api_group2.repository
                 {
                     ProfilePicture = record.ProfilePicture,
                     TotalExp = record.TotalExp,
+                    Name = record.UserName,
+                    Role = record.Role
                 });
             }
             foreach (var record in resume.achivements)
@@ -125,8 +149,7 @@ namespace rms_web_api_group2.repository
                 res.Achievements.Add(new Achievement()
                 {
                     AchievementName = record.AchievementName,
-                    AchievementYear = record.AchievementYear,
-                    AchievementDesc = record.AchievementDesc,
+                   
                 });
             }
             foreach (var record in resume.memberships)
@@ -134,7 +157,7 @@ namespace rms_web_api_group2.repository
                 res.Memberships.Add(new Membership()
                 {
                     MembershipName = record.MembershipName,
-                    MembershipDesc = record.MembershipDesc,
+                    
                 });
             }
             foreach (var record in resume.workExperience)
@@ -165,7 +188,44 @@ namespace rms_web_api_group2.repository
                     University = record.University,
                 });
             }
-            base.Insert(res);
+            //foreach (var record in resume.userResumes)
+            //{
+            //    res.UserResumes.Add(new UserResume()
+            //    {
+            //        UserId = record.UserId,
+            //        ResumeId = record.ResumeId,
+            //        UserResumeId = record.UserResumeId,
+            //    });
+            //}
+
+            foreach (var record in resume.certifications)
+            {
+                res.Certifications.Add(new Certification()
+                {
+                    certificationId = record.certificationId,
+                    certificationName = record.certificationName,
+                });
+            }
+
+            foreach (var record in resume.trainings)
+            {
+                res.Trainings.Add(new Training()
+                {
+                    TrainingId = record.TrainingId,
+                    Trainingname = record.Trainingname
+                });
+            }
+
+            var response = base.Insert(res);
+            if (response != null)
+            {
+                return new ResumeDomain()
+                {
+                    ResumeId = response.ResumeId,
+                    ResumeStatus = response.ResumeStatus,
+                };
+            }
+            return null;
         }
           
         public void Delete(int ResumeId)
@@ -188,6 +248,9 @@ namespace rms_web_api_group2.repository
                .Include(x => x.WorkExperiences)
                .Include(x => x.MyDetails)
                .Include(x => x.UserResumes)
+               
+                .Include(x => x.Certifications)
+                .Include(x => x.Trainings)
                .FirstOrDefault(x => x.ResumeId == ResumeId);
 
             if (res != null)
@@ -225,6 +288,8 @@ namespace rms_web_api_group2.repository
                     {
                         ProfilePicture = record.ProfilePicture,
                         TotalExp = record.TotalExp,
+                        Name = record.UserName,
+                        Role = record.Role
                     });
                 }
                 foreach (var record in resume.achivements)
@@ -232,8 +297,7 @@ namespace rms_web_api_group2.repository
                     res.Achievements.Add(new Achievement()
                     {
                         AchievementName = record.AchievementName,
-                        AchievementYear = record.AchievementYear,
-                        AchievementDesc = record.AchievementDesc,
+                       
                     });
                 }
                 foreach (var record in resume.memberships)
@@ -241,7 +305,7 @@ namespace rms_web_api_group2.repository
                     res.Memberships.Add(new Membership()
                     {
                         MembershipName = record.MembershipName,
-                        MembershipDesc = record.MembershipDesc,
+                        
                     });
                 }
                 foreach (var record in resume.workExperience)
@@ -270,6 +334,33 @@ namespace rms_web_api_group2.repository
                         PassingYear = record.PassingYear,
                         Marks = record.Marks,
                         University = record.University,
+                    });
+                }
+                //foreach (var record in resume.userResumes)
+                //{
+                //    res.UserResumes.Add(new UserResume()
+                //    {
+                //        UserId = record.UserId,
+                //        ResumeId = record.ResumeId,
+                //        UserResumeId = record.UserResumeId,
+                //    });
+                //}
+
+                foreach (var record in resume.certifications)
+                {
+                    res.Certifications.Add(new Certification()
+                    {
+                        certificationId = record.certificationId,
+                        certificationName = record.certificationName,
+                    });
+                }
+
+                foreach (var record in resume.trainings)
+                {
+                    res.Trainings.Add(new Training()
+                    {
+                        TrainingId = record.TrainingId,
+                        Trainingname = record.Trainingname
                     });
                 }
 

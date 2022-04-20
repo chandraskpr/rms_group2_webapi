@@ -18,7 +18,7 @@ namespace rms_web_api_group2.Controllers
         }
         // GET: api/<ResumesController>
         [HttpGet]
-        public IEnumerable<ResumeDomain> Get()
+        public List<ResumeDomain> Get()
         {
             return this.resumerepository.SelectAll();
         }
@@ -38,9 +38,9 @@ namespace rms_web_api_group2.Controllers
 
         // POST api/<ResumesController>
         [HttpPost]
-        public void Post([FromBody] ResumeDomain value)
+        public ResumeDomain Post([FromBody] ResumeDomain value)
         {
-            this.resumerepository.Insert(value);
+            return this.resumerepository.Insert(value);
         }
 
         // PUT api/<ResumesController>/5

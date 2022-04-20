@@ -26,10 +26,11 @@ namespace rms_web_api_group2.repository
             return this.entitySet.ToList();
         }
         
-        public void Insert(T obj)
+        public T Insert(T obj)
         {
             this.entitySet.Add(obj);
             this.context.SaveChanges();
+            return obj;
         }
 
         public void Update(T obj)
