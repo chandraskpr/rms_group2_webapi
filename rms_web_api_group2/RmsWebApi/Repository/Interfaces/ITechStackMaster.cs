@@ -4,6 +4,6 @@ namespace RmsWebApi.Repository.Interfaces
 {
     public interface ITechStackMaster:IBaseRepository<TechStackMaster>
     {
-        public List<TechStackMasterDomain> GetAll();
+        public List<TechStackMasterData> GetAll();
     }
 }

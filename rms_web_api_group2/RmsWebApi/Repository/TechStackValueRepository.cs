@@ -11,9 +11,9 @@ namespace RmsWebApi.Repository
         {
 
         }
-        public List<TechStackValueDomain> GetAll()
+        public List<TechStackValueData> GetAll()
         {
-            var project = base.SelectAll().Select(x => new TechStackValueDomain()
+            var project = base.SelectAll().Select(x => new TechStackValueData()
             {
                 ValueId = x.ValueId,
                 ValueName = x.ValueName,
@@ -23,10 +23,11 @@ namespace RmsWebApi.Repository
             return project;
 
         }
+        
 
-        public List<TechStackValueDomain> GetActiveTech()
+        public List<TechStackValueData> GetActiveTech()
         {
-            var result = base.SelectAll().Select(x => new TechStackValueDomain()
+            var result = base.SelectAll().Select(x => new TechStackValueData()
             {
                 TechStackId= x.TechStackId,
                 ValueId= x.ValueId,
@@ -35,7 +36,7 @@ namespace RmsWebApi.Repository
             }).ToList();
             return result;
         }
-        public int Create(TechStackValueDomain TValue)
+        public int Create(TechStackValueData TValue)
         {
             var res = new TechStackValue()
             {
@@ -57,7 +58,7 @@ namespace RmsWebApi.Repository
                 base.Delete(res);
         }
 
-        public void Update(int TechId, TechStackValueDomain TValue)
+        public void Update(int TechId, TechStackValueData TValue)
         {
             var res = base.SelectAll().FirstOrDefault(x => x.ValueId == TechId);
             if (res != null)

@@ -10,9 +10,9 @@ namespace RmsWebApi.Repository
         public TechStackMasterRepository(RMSContext context):base(context)
         { }
 
-        public List<TechStackMasterDomain> GetAll()
+        public List<TechStackMasterData> GetAll()
         {
-            var records = base.SelectAll().Select(x => new TechStackMasterDomain()
+            var records = base.SelectAll().Select(x => new TechStackMasterData()
             {
                 TechStackId = x.TechStackId,
                 Category=x.Category,

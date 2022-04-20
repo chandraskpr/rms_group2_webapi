@@ -11,9 +11,9 @@ namespace RmsWebApi.Repository
 
         }
 
-        public List<RoleMasterDomain> GetAll()
+        public List<RoleMasterData> GetAll()
         {
-            var role = base.SelectAll().Select(x => new RoleMasterDomain()
+            var role = base.SelectAll().Select(x => new RoleMasterData()
             {
                 RoleId = x.RoleId,
                 RoleName = x.RoleName,
@@ -23,7 +23,18 @@ namespace RmsWebApi.Repository
             return role;
 
         }
-        public int Create(RoleMasterDomain role)
+        public List<RoleMasterData> GetActiveRole()
+        {
+            var result = base.SelectAll().Select(x => new RoleMasterData()
+            {
+                RoleId = x.RoleId,
+                RoleDescription = x.RoleDescription,
+                RoleName = x.RoleName,
+            }).ToList();
+            return result;
+        }
+
+        public int Create(RoleMasterData role)
         {
             var res = new RoleMaster()
             {
@@ -45,7 +56,7 @@ namespace RmsWebApi.Repository
                 base.Delete(res);
         }
 
-        public void Update(int roleId , RoleMasterDomain role)
+        public void Update(int roleId , RoleMasterData role)
         {
             var res = base.SelectAll().FirstOrDefault(x => x.RoleId == roleId);
             if(res != null)

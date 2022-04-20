@@ -1,6 +1,6 @@
 ﻿namespace RmsWebApi.Data
 {
-    public class RoleMasterDomain
+    public class RoleMasterData
     {
         public int RoleId { get; set; }
         public string? RoleName { get; set; }

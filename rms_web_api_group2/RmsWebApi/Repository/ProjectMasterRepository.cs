@@ -10,9 +10,9 @@ namespace RmsWebApi.Repository
         {
         }
 
-        public List<ProjectMasterDomain> GetAll()
+        public List<ProjectMasterData> GetAll()
         {
-            var project = base.SelectAll().Select(x => new ProjectMasterDomain()
+            var project = base.SelectAll().Select(x => new ProjectMasterData()
             {
                ProjectId = x.ProjectId,
                ProjectName = x.ProjectName,
@@ -21,7 +21,18 @@ namespace RmsWebApi.Repository
             return project;
 
         }
-        public int Create(ProjectMasterDomain project)
+        public List<ProjectMasterData> GetActiveProject()
+        {
+            var result = base.SelectAll().Select(x => new ProjectMasterData()
+            {
+                ProjectId = x.ProjectId,
+                ProjectName = x.ProjectName,
+                ProjectDescription = x.ProjectDescription,
+                IsDeleted = x.IsDeleted,
+            }).ToList();
+            return result;
+        }
+        public int Create(ProjectMasterData project)
         {
             var res = new ProjectMaster()
             {
@@ -42,7 +53,7 @@ namespace RmsWebApi.Repository
                 base.Delete(res);
         }
 
-        public void Update(int projId, ProjectMasterDomain project)
+        public void Update(int projId, ProjectMasterData project)
         {
             var res = base.SelectAll().FirstOrDefault(x => x.ProjectId == projId);
             if (res != null)

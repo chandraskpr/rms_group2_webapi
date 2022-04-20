@@ -4,13 +4,14 @@ namespace RmsWebApi.Repository.Interfaces
 {
     public interface ITechStackValue:IBaseRepository<TechStackValue>
     {
-        public List<TechStackValueDomain> GetAll();
+        public List<TechStackValueData> GetAll();
 
-        public int Create(TechStackValueDomain TValue);
+        public int Create(TechStackValueData TValue);
 
         public void Delete(int TechId);
+        public List<TechStackValueData> GetActiveTech();
 
-        public List<TechStackValueDomain> GetActiveTech();
-        public void Update(int TechId, TechStackValueDomain TValue);
+       
+        public void Update(int TechId, TechStackValueData TValue);
     }
 }

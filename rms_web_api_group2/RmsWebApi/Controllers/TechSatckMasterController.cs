@@ -23,7 +23,7 @@ namespace RmsWebApi.Controllers
        
 
         [HttpGet]
-        public List<TechStackMasterDomain> Get()
+        public List<TechStackMasterData> Get()
         {
             return this.techRepository.GetAll();
         }

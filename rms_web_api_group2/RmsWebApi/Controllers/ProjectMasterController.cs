@@ -16,15 +16,19 @@ namespace RmsWebApi.Controllers
         }
         // GET: api/<ProjectMasterController>
         [HttpGet]
-        public List<ProjectMasterDomain> Get()
+        public List<ProjectMasterData> Get()
         {
             return this.projectMasterRepository.GetAll();
         }
-
+        [HttpGet("{isDeleted}")]
+        public ProjectMasterData GetActiveRoll(bool isDeleted)
+        {
+            return this.projectMasterRepository.GetAll().FirstOrDefault(x => x.IsDeleted == isDeleted);
+        }
 
         // POST api/<RoleMasterController>
         [HttpPost]
-        public int Post([FromBody] ProjectMasterDomain value)
+        public int Post([FromBody] ProjectMasterData value)
         {
             return this.projectMasterRepository.Create(value);
 
@@ -32,7 +36,7 @@ namespace RmsWebApi.Controllers
 
         // PUT api/<RoleMasterController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] ProjectMasterDomain value)
+        public void Put(int id, [FromBody] ProjectMasterData value)
         {
             this.projectMasterRepository.Update(id, value);
         }

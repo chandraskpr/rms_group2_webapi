@@ -1,6 +1,6 @@
 ﻿namespace RmsWebApi.Data
 {
-    public class ProjectMasterDomain
+    public class ProjectMasterData
     {
         public int ProjectId { get; set; }
         public string? ProjectName { get; set; }

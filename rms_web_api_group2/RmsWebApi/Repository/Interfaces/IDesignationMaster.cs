@@ -9,6 +9,7 @@ namespace RmsWebApi.Repository.Interfaces
         public int Create(DesignationMasterDomain designation);
 
         public void Delete(int degId);
+        public List<DesignationMasterDomain> GetActiveDesignations();
 
         public void Update(int degId, DesignationMasterDomain designation);
     }

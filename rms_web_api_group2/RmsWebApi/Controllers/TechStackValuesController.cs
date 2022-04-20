@@ -21,19 +21,20 @@ namespace RmsWebApi.Controllers
         }
 
         [HttpGet]
-        public List<TechStackValueDomain> Get()
+        public List<TechStackValueData> Get()
         {
             return this.valueRepository.GetAll();
         }
-
         [HttpGet("{isDeleted}")]
-        public TechStackValueDomain Get(bool isDeleted)
+        public TechStackValueData Get(bool isDeleted)
         {
             return this.valueRepository.GetAll().FirstOrDefault(x => x.IsDeleted == isDeleted);
         }
 
+       
+
         [HttpPost]
-        public int Post([FromBody] TechStackValueDomain value)
+        public int Post([FromBody] TechStackValueData value)
         {
             return this.valueRepository.Create(value);
         }
@@ -45,7 +46,7 @@ namespace RmsWebApi.Controllers
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] TechStackValueDomain value)
+        public void Put(int id, [FromBody] TechStackValueData value)
         {
             this.valueRepository.Update(id, value);
         }

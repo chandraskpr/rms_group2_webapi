@@ -1,6 +1,6 @@
 ﻿namespace RmsWebApi.Data
 {
-    public class TechStackValueDomain
+    public class TechStackValueData
     {
         public int ValueId { get; set; }
         public string? ValueName { get; set; }
