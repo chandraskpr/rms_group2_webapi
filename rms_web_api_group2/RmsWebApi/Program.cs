@@ -28,7 +28,9 @@ builder.Services.AddTransient<IRoleMaster, RoleMasterRepository>();
 builder.Services.AddTransient<IDesignationMaster, DesignationMasterRepository>();
 
 builder.Services.AddTransient<IProjectMaster, ProjectMasterRepository>();
+builder.Services.AddTransient<ITechStackMaster, TechStackMasterRepository>();
 
+builder.Services.AddTransient<ITechStackValue, TechStackValueRepository>();
 builder.Services.AddCors(c =>
 {
     c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
