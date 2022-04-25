@@ -37,9 +37,10 @@ builder.Services.AddCors(c =>
     c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 });
 
-builder.Services.AddControllersWithViews().AddJsonOptions(options =>
-options.JsonSerializerOptions.ReferenceHandler = options.JsonSerializerOptions.ReferenceHandler ?? ReferenceHandler.IgnoreCycles)
-.AddJsonOptions(options => options.JsonSerializerOptions.PropertyNameCaseInsensitive = true);
+//builder.Services.AddControllersWithViews().AddJsonOptions(options =>
+//options.JsonSerializerOptions.ReferenceHandler = options.JsonSerializerOptions.ReferenceHandler ?? ReferenceHandler.IgnoreCycles)
+//.AddJsonOptions(options => options.JsonSerializerOptions.PropertyNameCaseInsensitive = true);
+
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -49,11 +50,13 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 //app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-app.UseCors(options =>
-    options.WithOrigins("http://localhost:3000")
-    .AllowAnyHeader()
-    .AllowAnyMethod()
-);
+//app.UseCors(options =>
+//   
+//    .AllowAnyHeader()
+//    .AllowAnyMethod()
+//);
+
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

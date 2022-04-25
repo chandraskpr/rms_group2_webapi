@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RMS.Domain.ResumeDomain
+namespace RMS.Data.ResumeData
 {
     public class EducationalBackgroundData
     {

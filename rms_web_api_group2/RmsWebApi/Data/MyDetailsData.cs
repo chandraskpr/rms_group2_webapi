@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-namespace RMS.Domain.ResumeDomain
+namespace RMS.Data.ResumeData
 {
     public class MyDetailsData
     {

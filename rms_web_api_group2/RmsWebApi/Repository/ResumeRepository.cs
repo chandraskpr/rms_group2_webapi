@@ -24,30 +24,30 @@ namespace RmsWebApi.Repository
                 UpdationDate = x.UpdationDate,
                 CreationDate = x.CreationDate,
 
-                SkillList = x.Skills.Select(s => new RMS.Domain.ResumeDomain.SkillsData()
+                SkillList = x.Skills.Select(s => new RMS.Data.ResumeData.SkillsData()
                 {
                     Category = s.Category,
                     SkillName = s.SkillName,
 
                 }).ToList(),
 
-                aboutMe = x.AboutMes.Select(b => new RMS.Domain.ResumeDomain.AboutMeData()
+                aboutMe = x.AboutMes.Select(b => new RMS.Data.ResumeData.AboutMeData()
                 {
                     KeyPoints = b.KeyPoints,
                     MainDescription = b.MainDescription,
                 }).ToList(),
 
-                achivements = x.Achievements.Select(c => new RMS.Domain.ResumeDomain.AchievementsData()
+                achivements = x.Achievements.Select(c => new RMS.Data.ResumeData.AchievementsData()
                 {
                     AchievementName = c.AchievementName,
                 }).ToList(),
 
-                memberships = x.Memberships.Select(e => new RMS.Domain.ResumeDomain.MembershipsData()
+                memberships = x.Memberships.Select(e => new RMS.Data.ResumeData.MembershipsData()
                 {
                     MembershipName = e.MembershipName,
                 }).ToList(),
 
-                myDetails = x.MyDetails.Select(f => new RMS.Domain.ResumeDomain.MyDetailsData()
+                myDetails = x.MyDetails.Select(f => new RMS.Data.ResumeData.MyDetailsData()
                 {
                     ProfilePicture = f.ProfilePicture,
                     TotalExp = (float)f.TotalExp,
@@ -55,7 +55,7 @@ namespace RmsWebApi.Repository
                     Role = f.Role,
                 }).ToList(),
 
-                workExperience = x.WorkExperiences.Select(g => new RMS.Domain.ResumeDomain.WorkExperienceData()
+                workExperience = x.WorkExperiences.Select(g => new RMS.Data.ResumeData.WorkExperienceData()
                 {
                     ClientDescription = g.ClientDescription,
                     Country = g.Country,
@@ -68,7 +68,7 @@ namespace RmsWebApi.Repository
                     TechnologyStack = g.TechnologyStack,
                 }).ToList(),
 
-                educationDetails = x.EducationDetails.Select(d => new RMS.Domain.ResumeDomain.EducationDetailsData()
+                educationDetails = x.EducationDetails.Select(d => new RMS.Data.ResumeData.EducationDetailsData()
                 {
                     EducationalDetailsId = d.EducationId,
                     CourseName = d.CourseName,

@@ -1,4 +1,4 @@
-using RMS.Domain.ResumeDomain;
+using RMS.Data.ResumeData;
 
 namespace RmsWebApi.Data
 {

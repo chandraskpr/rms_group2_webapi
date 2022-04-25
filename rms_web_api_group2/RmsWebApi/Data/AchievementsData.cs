@@ -1,4 +1,4 @@
-﻿namespace RMS.Domain.ResumeDomain
+﻿namespace RMS.Data.ResumeData
 {
     public class AchievementsData
     {
