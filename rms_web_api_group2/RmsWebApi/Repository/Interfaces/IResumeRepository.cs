@@ -12,5 +12,7 @@ namespace RmsWebApi.Repository.Interfaces
         public void Delete(int ResumeId);
 
         public void Update(int ResumeId, ResumeData resume);
+        public List<ResumeData> GetNonDraftResume();
+
     }
 }
