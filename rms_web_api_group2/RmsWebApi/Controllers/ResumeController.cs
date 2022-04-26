@@ -23,6 +23,11 @@ namespace RmsWebApi.Controllers.API.Controller
         {
             return this.resumeRepository.GetAll();
         }
+        [HttpGet("{id}")]
+        public ResumeData Get(int id)
+        {
+            return this.resumeRepository.GetAll().FirstOrDefault(x => x.ResumeId == id);
+        }
 
         [HttpPost]
         public ResumeData Post([FromBody] ResumeData value)
