@@ -16,6 +16,8 @@ namespace RmsWebApi.Data
             userResumes = new List<UserResumeData>();
             certifications = new List<CertificationData>();
             trainings = new List<TrainingData>();
+            reviews = new List<ReviewTableData>();
+
         }
         public int ResumeId { get; set; }
         public string ResumeTitle { get; set; }
@@ -36,5 +38,7 @@ namespace RmsWebApi.Data
         public List<CertificationData> certifications { get; set; }
 
         public List<TrainingData> trainings { get; set; }
+        public List<ReviewTableData> reviews { get; set; }
+
     }
 }

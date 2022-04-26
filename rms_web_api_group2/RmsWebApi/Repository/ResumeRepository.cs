@@ -96,6 +96,14 @@ namespace RmsWebApi.Repository
                 {
                     TrainingId = p.TrainingId,
                     Trainingname = p.Trainingname
+                }).ToList(),
+
+                reviews = x.ReviewTables.Select(a => new ReviewTableData()
+                {
+                    ReviewId = a.ReviewId,
+                    ReviewComment = a.ReviewComment,
+                    ResumeId = a.ResumeId,
+                    ReviewerId = a.ReviewerId,
                 }).ToList()
 
             }).ToList();
@@ -179,6 +187,14 @@ namespace RmsWebApi.Repository
                 {
                     TrainingId = p.TrainingId,
                     Trainingname = p.Trainingname
+                }).ToList(),
+
+                reviews = x.ReviewTables.Select(a => new ReviewTableData()
+                {
+                    ReviewId = a.ReviewId,
+                    ReviewComment = a.ReviewComment,
+                    ResumeId = a.ResumeId,
+                    ReviewerId = a.ReviewerId,
                 }).ToList()
 
             }).ToList();
@@ -295,7 +311,16 @@ namespace RmsWebApi.Repository
                     Trainingname = record.Trainingname
                 });
             }
-
+            foreach (var record in resume.reviews)
+            {
+                res.ReviewTables.Add(new ReviewTable()
+                {
+                    ReviewId = record.ReviewId,
+                    ReviewerId = record.ReviewerId,
+                    ReviewComment = record.ReviewComment,
+                    ResumeId = record.ResumeId
+                });
+            }
             var response = base.Create(res);
             if (response != null)
             {
@@ -324,6 +349,8 @@ namespace RmsWebApi.Repository
                 .Include(x => x.UserResumes)
                 .Include(x => x.Certifications)
                 .Include(x => x.training)
+                .Include(x => x.ReviewTables)
+
                 .FirstOrDefault(x => x.ResumeId == ResumeId);
 
             if (res != null)
@@ -439,6 +466,16 @@ namespace RmsWebApi.Repository
                     {
                         TrainingId = record.TrainingId,
                         Trainingname = record.Trainingname
+                    });
+                }
+                foreach (var record in resume.reviews)
+                {
+                    res.ReviewTables.Add(new ReviewTable()
+                    {
+                        ReviewId = record.ReviewId,
+                        ReviewerId = record.ReviewerId,
+                        ReviewComment = record.ReviewComment,
+                        ResumeId = record.ResumeId
                     });
                 }
                 base.Update(res);

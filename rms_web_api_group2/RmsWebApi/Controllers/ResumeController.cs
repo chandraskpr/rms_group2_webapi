@@ -25,7 +25,7 @@ namespace RmsWebApi.Controllers.API.Controller
         }
         [HttpGet]
         [Route("GetNonDraftResume")]
-        public List<ResumeDomain> GetNonDraftResume()
+        public List<ResumeData> GetNonDraftResume()
         {
             return this.resumeRepository.GetNonDraftResume();
         }
