@@ -46,6 +46,46 @@ namespace RmsWebApi.Repository
             return records;
         }
 
+        public int CreateComment(ReviewTableData review)
+        {
+            var rev = new ReviewTable()
+            {
+                ResumeId = review.ResumeId,
+                ReviewComment = review.ReviewComment,
+                ReviewerId = review.ReviewerId,
+
+            };
+            var result = this.context.ReviewTables.Add(rev);
+            this.context.SaveChanges();
+            return rev.ReviewId;
+        }
+
+        public void EditComment(ReviewTableData review, int id)
+        {
+            var rev = context.ReviewTables.FirstOrDefault(x => x.ReviewId == id);
+            if (rev != null)
+            {
+                rev.ReviewComment = review.ReviewComment;
+                rev.ReviewerId = review.ReviewerId;
+
+                context.ReviewTables.Update(rev);
+                context.SaveChanges();
+            }
+
+        }
+
+        public List<ReviewTableData> GetComment(int userId)
+        {
+            var reviews = context.ReviewTables.Where(y => y.ReviewerId == userId).Select(x => new ReviewTableData()
+            {
+                ReviewerId = x.ReviewerId,
+                ReviewComment = x.ReviewComment,
+                ReviewId = x.ReviewId,
+                ResumeId = x.ResumeId,
+            }).ToList();
+            return reviews;
+        }
+
         public void Create(UserInfoData userInfo)
         {
             var user = new UserInfo()

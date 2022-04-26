@@ -4,6 +4,10 @@ using RmsWebApi.Repository.Interfaces;
 using System.Linq;
 using RmsWebApi.Data;
 using RmsWebApi.Repository;
+using RMS.Data.ResumeData;
+
+
+
 
 namespace RmsWebApi.Controllers.API.Controller
 {

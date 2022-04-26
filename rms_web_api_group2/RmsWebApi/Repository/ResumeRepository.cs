@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RMS.Data.ResumeData;
+
 using RmsWebApi.Data;
 using RmsWebApi.Repository.Interfaces;
 using RmsWebApi.RMS_DB;

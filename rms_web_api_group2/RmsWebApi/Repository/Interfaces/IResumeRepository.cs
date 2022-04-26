@@ -1,4 +1,6 @@
-﻿using RmsWebApi.Data;
+﻿using RMS.Data.ResumeData;
+
+using RmsWebApi.Data;
 using RmsWebApi.RMS_DB;
 
 namespace RmsWebApi.Repository.Interfaces
