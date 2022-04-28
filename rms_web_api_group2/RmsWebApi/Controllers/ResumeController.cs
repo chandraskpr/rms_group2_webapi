@@ -27,6 +27,12 @@ namespace RmsWebApi.Controllers.API.Controller
         {
             return this.resumeRepository.GetAll();
         }
+
+        [HttpGet("{id}")]
+        public ResumeData Get(int id)
+        {
+            return this.resumeRepository.GetAll().FirstOrDefault(x => x.ResumeId == id);
+        }
         [HttpGet]
         [Route("GetNonDraftResume")]
         public List<ResumeData> GetNonDraftResume()
@@ -34,11 +40,7 @@ namespace RmsWebApi.Controllers.API.Controller
             return this.resumeRepository.GetNonDraftResume();
         }
 
-        [HttpGet("{id}")]
-        public ResumeData Get(int id)
-        {
-            return this.resumeRepository.GetAll().FirstOrDefault(x => x.ResumeId == id);
-        }
+       
 
         [HttpPost]
         public ResumeData Post([FromBody] ResumeData value)
@@ -56,6 +58,13 @@ namespace RmsWebApi.Controllers.API.Controller
         public void Update(int id, ResumeData resume)
         {
             this.resumeRepository.Update(id, resume);
+        }
+        [HttpGet]
+        [Route("GetResumeBySkills/{skillIds}")]
+        public List<ResumeData> GetResumeBySkills(int skillIds)
+        {
+            return this.resumeRepository.GetResumeBySkills(skillIds);
+
         }
     }
 }

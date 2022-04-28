@@ -15,6 +15,8 @@ namespace RmsWebApi.Repository.Interfaces
 
         public void Update(int ResumeId, ResumeData resume);
         public List<ResumeData> GetNonDraftResume();
+        public List<ResumeData> GetResumeBySkills(int skillIds);
+
 
     }
 }
