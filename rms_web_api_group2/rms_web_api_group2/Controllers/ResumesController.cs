@@ -42,7 +42,12 @@ namespace rms_web_api_group2.Controllers
         {
             return this.resumerepository.Insert(value);
         }
-
+        [HttpGet]
+        [Route("GetNonDraftResume")]
+        public List<ResumeDomain> GetNonDraftResume()
+        {
+            return this.resumerepository.GetNonDraftResume();
+        }
         // PUT api/<ResumesController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] ResumeDomain value)
@@ -55,6 +60,13 @@ namespace rms_web_api_group2.Controllers
         public void Delete(int id)
         {
             this.resumerepository.Delete(id);
+        }
+        [HttpGet]
+        [Route("GetResumeBySkills/{skillIds}")]
+        public List<ResumeDomain> GetResumeBySkills(int skillIds)
+        {
+            return this.resumerepository.GetResumeBySkills(skillIds);
+
         }
     }
 }

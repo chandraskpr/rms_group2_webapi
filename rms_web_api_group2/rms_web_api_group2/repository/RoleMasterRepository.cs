@@ -22,6 +22,17 @@ namespace rms_web_api_group2.repository
             }).ToList();
             return role;
         }
+        public List<RoleMasterDomain> GetActiveRole()
+        {
+            var result = base.SelectAll().Where(x => x.IsDeleted.HasValue && !x.IsDeleted.Value).Select(x => new RoleMasterDomain()
+            {
+                RoleId = x.RoleId,
+                RoleDescription = x.RoleDescription,
+                RoleName = x.RoleName,
+                IsDeleted = (bool)x.IsDeleted,
+            }).ToList();
+            return result;
+        }
         public int Create(RoleMasterDomain role)
         {
             var res = new RoleMaster()

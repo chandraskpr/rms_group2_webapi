@@ -20,6 +20,12 @@ namespace rms_web_api_group2.Controllers
         {
             return this.projectMasterRepository.GetAll();
         }
+        [HttpGet]
+        [Route("GetActiveProjects")]
+        public List<ProjectMasterDomain> GetActiveProjects()
+        {
+            return this.projectMasterRepository.GetActiveProject();
+        }
 
         // POST api/<RoleMasterController>
         [HttpPost]

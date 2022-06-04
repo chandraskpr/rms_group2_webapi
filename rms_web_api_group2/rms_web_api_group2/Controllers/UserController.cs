@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using rms_web_api_group2.data;
+using rms_web_api_group2.data.Resume;
 using rms_web_api_group2.repository.Interface;
 using rms_web_api_group2.RMSdb;
 
@@ -74,6 +75,26 @@ namespace rms_web_api_group2.Controllers
         public void Delete(int id)
         {
             this.userRepository.Delete(id);
+        }
+        [HttpGet]
+        [Route("GetComment/{UserId}")]
+        public List<ReviewTableDomain> GetComment(int UserId)
+        {
+            return this.userRepository.GetComment(UserId);
+        }
+
+        [HttpPost]
+        [Route("CreateComment")]
+        public int CreateComment([FromBody] ReviewTableDomain review)
+        {
+            return this.userRepository.CreateComment(review);
+        }
+
+        [HttpPut]
+        [Route("EditComment/{id}")]
+        public void EditComment([FromBody] ReviewTableDomain review, int id)
+        {
+            this.userRepository.EditComment(review, id);
         }
     }
 }

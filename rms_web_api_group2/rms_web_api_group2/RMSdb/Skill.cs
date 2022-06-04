@@ -8,6 +8,7 @@ namespace rms_web_api_group2.RMSdb
         public int SkillId { get; set; }
         public int? ResumeId { get; set; }
         public string Category { get; set; } = null!;
+        public string? SkillName { get; set; }
 
         public virtual Resume? Resume { get; set; }
     }

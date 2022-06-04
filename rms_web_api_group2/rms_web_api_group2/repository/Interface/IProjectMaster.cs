@@ -8,6 +8,7 @@ namespace rms_web_api_group2.repository.Interface
         public List<ProjectMasterDomain> GetAll();
         public int Create(ProjectMasterDomain projct);
         public void Delete(int projectId);
+        public List<ProjectMasterDomain> GetActiveProject();
         public void Update(int projectId, ProjectMasterDomain project);
     }
 }

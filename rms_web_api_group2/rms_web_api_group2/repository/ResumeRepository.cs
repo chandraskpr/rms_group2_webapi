@@ -29,7 +29,9 @@ namespace rms_web_api_group2.repository
 
             SkillList = x.Skills.Select(s => new RMS.Domain.ResumeDomain.UserSkillDomain()
             {
+                SkillId = s.SkillId,    
                 Category = s.Category,
+                SkillName = s.SkillName,
 
             }).ToList(),
 
@@ -42,6 +44,7 @@ namespace rms_web_api_group2.repository
 
                 achivements =x.Achievements.Select(c => new RMS.Domain.ResumeDomain.AchievementDomain()
                 {
+                    AchievementId = c.AchievementId,    
                     AchievementName = c.AchievementName,
                    
                     
@@ -49,12 +52,14 @@ namespace rms_web_api_group2.repository
 
                 memberships = x.Memberships.Select(e => new RMS.Domain.ResumeDomain.MembershipDomain()
                 {
+                    MembershipId= e.MembershipId,   
                     MembershipName = e.MembershipName,
                    
                 }).ToList(),
 
                 myDetails = x.MyDetails.Select(f => new RMS.Domain.ResumeDomain.MyDetailDomain()
                 {
+                    UserdetailsId = f.UserdetailsId,
                     ProfilePicture = f.ProfilePicture,
                     TotalExp = (float)f.TotalExp,
                     UserName = f.Name,
@@ -63,6 +68,7 @@ namespace rms_web_api_group2.repository
 
                 workExperience = x.WorkExperiences.Select(g => new RMS.Domain.ResumeDomain.WorkExperienceDomain()
                 {
+                    WorkExperienceId = g.WorkExperienceId,  
                     ClientDescription = g.ClientDescription,
                     Country = g.Country,
                     ProjectName = g.ProjectName,
@@ -101,12 +107,112 @@ namespace rms_web_api_group2.repository
                 {
                     TrainingId = p.TrainingId,
                     Trainingname = p.Trainingname
+                }).ToList(),
+
+                reviews = x.ReviewTables.Select(a => new ReviewTableDomain()
+                {
+                    ReviewId = a.ReviewId,
+                    ReviewComment = a.ReviewComment,
+                    ResumeId = a.ResumeId,
+                    ReviewerId = a.ReviewerId,
                 }).ToList()
 
             }).ToList();
             return records;
         }
-           
+        public List<ResumeDomain> GetNonDraftResume()
+        {
+            var result = base.SelectAll().Where(x => x.ResumeStatus != "Draft").Select(x => new ResumeDomain()
+            {
+                ResumeId = x.ResumeId,
+                ResumeTitle = x.ResumeTitle,
+                ResumeStatus = x.ResumeStatus,
+                UpdationDate = x.UpdationDate,
+                CreationDate = x.CreationDate,
+
+
+                SkillList = x.Skills.Select(s => new RMS.Domain.ResumeDomain.UserSkillDomain()
+                {
+                    Category = s.Category,
+                    SkillName = s.SkillName,
+
+                }).ToList(),
+
+                aboutMe = x.AboutMes.Select(b => new RMS.Domain.ResumeDomain.AboutMeDomain()
+                {
+                    KeyPoints = b.KeyPoints,
+                    MainDescription = b.MainDescription,
+                }).ToList(),
+
+                achivements = x.Achievements.Select(c => new RMS.Domain.ResumeDomain.AchievementDomain()
+                {
+                    AchievementName = c.AchievementName,
+                }).ToList(),
+
+                memberships = x.Memberships.Select(e => new RMS.Domain.ResumeDomain.MembershipDomain()
+                {
+                    MembershipName = e.MembershipName,
+                }).ToList(),
+
+                myDetails = x.MyDetails.Select(f => new RMS.Domain.ResumeDomain.MyDetailDomain()
+                {
+                    UserdetailsId = f.UserdetailsId,
+                    ProfilePicture = f.ProfilePicture,
+                    TotalExp = (float)f.TotalExp,
+                    UserName = f.Name,
+                    Role = f.Role,
+                }).ToList(),
+
+                workExperience = x.WorkExperiences.Select(g => new RMS.Domain.ResumeDomain.WorkExperienceDomain()
+                {
+                    ClientDescription = g.ClientDescription,
+                    Country = g.Country,
+                    ProjectName = g.ProjectName,
+                    ProjectRole = g.ProjectRole,
+                    ProjectResponsibilities = g.ProjectResponsibilities,
+                    StartDate = g.StartDate,
+                    EndDate = g.EndDate,
+                    BusinessSolution = g.BusinessSolution,
+                    TechnologyStack = g.TechnologyStack,
+                }).ToList(),
+
+                educationDetails = x.EducationDetails.Select(d => new RMS.Domain.ResumeDomain.EducationalDetailsDomain()
+                {
+                    EducationId = d.EducationId,
+                    CourseName = d.CourseName,
+                    Specialization = d.Specialization,
+                    InstituteName = d.InstituteName,
+                    PassingYear = d.PassingYear,
+                    Marks = (float)d.Marks,
+                    University = d.University,
+                }).ToList(),
+
+
+                certifications = x.Certifications.Select(p => new CertificationDomain()
+                {
+                    certificationId = p.certificationId,
+                    certificationName = p.certificationName,
+                }).ToList(),
+
+                trainings = x.Trainings.Select(p => new TrainingDomain()
+                {
+                    TrainingId = p.TrainingId,
+                    Trainingname = p.Trainingname
+                }).ToList(),
+
+                reviews = x.ReviewTables.Select(a => new ReviewTableDomain()
+                {
+                    ReviewId = a.ReviewId,
+                    ReviewComment = a.ReviewComment,
+                    ResumeId = a.ResumeId,
+                    ReviewerId = a.ReviewerId,
+                }).ToList()
+
+            }).ToList();
+
+            return result;
+        }
+
         public ResumeDomain Insert(ResumeDomain resume)
         {
             var res = new Resume()
@@ -122,6 +228,7 @@ namespace rms_web_api_group2.repository
                 res.Skills.Add(new Skill()
                 {
                     Category = record.Category,
+                    SkillName = record.SkillName,
                 });
             }
 
@@ -138,6 +245,7 @@ namespace rms_web_api_group2.repository
             {
                 res.MyDetails.Add(new MyDetail()
                 {
+                    UserdetailsId = record.UserdetailsId,
                     ProfilePicture = record.ProfilePicture,
                     TotalExp = record.TotalExp,
                     Name = record.UserName,
@@ -215,6 +323,16 @@ namespace rms_web_api_group2.repository
                     Trainingname = record.Trainingname
                 });
             }
+            foreach (var record in resume.reviews)
+            {
+                res.ReviewTables.Add(new ReviewTable()
+                {
+                    ReviewId = record.ReviewId,
+                    ReviewerId = record.ReviewerId,
+                    ReviewComment = record.ReviewComment,
+                    ResumeId = record.ResumeId
+                });
+            }
 
             var response = base.Insert(res);
             if (response != null)
@@ -248,7 +366,7 @@ namespace rms_web_api_group2.repository
                .Include(x => x.WorkExperiences)
                .Include(x => x.MyDetails)
                .Include(x => x.UserResumes)
-               
+               .Include(x => x.ReviewTables)
                 .Include(x => x.Certifications)
                 .Include(x => x.Trainings)
                .FirstOrDefault(x => x.ResumeId == ResumeId);
@@ -270,6 +388,7 @@ namespace rms_web_api_group2.repository
                     res.Skills.Add(new Skill()
                     {
                         Category = record.Category,
+                        SkillName = record.SkillName,
                     });
                 }
 
@@ -363,11 +482,116 @@ namespace rms_web_api_group2.repository
                         Trainingname = record.Trainingname
                     });
                 }
+                foreach (var record in resume.reviews)
+                {
+                    res.ReviewTables.Add(new ReviewTable()
+                    {
+                        ReviewId = record.ReviewId,
+                        ReviewerId = record.ReviewerId,
+                        ReviewComment = record.ReviewComment,
+                        ResumeId = record.ResumeId
+                    });
+                }
 
                 base.Update(res);
 
             }
 
+        }
+        public List<ResumeDomain> GetResumeBySkills(int skillIds)
+        {
+            var result = base.SelectAll().Where(z => z.Skills.Any(y => y.SkillId == skillIds)).Select(x => new ResumeDomain()
+            {
+                ResumeId = x.ResumeId,
+                ResumeTitle = x.ResumeTitle,
+                ResumeStatus = x.ResumeStatus,
+                UpdationDate = x.UpdationDate,
+                CreationDate = x.CreationDate,
+
+                SkillList = x.Skills.Select(s => new RMS.Domain.ResumeDomain.UserSkillDomain()
+                {
+                    Category = s.Category,
+                    SkillName = s.SkillName,
+
+                }).ToList(),
+
+                aboutMe = x.AboutMes.Select(b => new RMS.Domain.ResumeDomain.AboutMeDomain()
+                {
+                    KeyPoints = b.KeyPoints,
+                    MainDescription = b.MainDescription,
+                }).ToList(),
+
+                achivements = x.Achievements.Select(c => new RMS.Domain.ResumeDomain.AchievementDomain()
+                {
+                    AchievementName = c.AchievementName,
+                }).ToList(),
+
+                memberships = x.Memberships.Select(e => new RMS.Domain.ResumeDomain.MembershipDomain()
+                {
+                    MembershipName = e.MembershipName,
+                }).ToList(),
+
+                myDetails = x.MyDetails.Select(f => new RMS.Domain.ResumeDomain.MyDetailDomain()
+                {
+                    ProfilePicture = f.ProfilePicture,
+                    TotalExp = (float)f.TotalExp,
+                    UserName = f.Name,
+                    Role = f.Role,
+                }).ToList(),
+
+                workExperience = x.WorkExperiences.Select(g => new RMS.Domain.ResumeDomain.WorkExperienceDomain()
+                {
+                    ClientDescription = g.ClientDescription,
+                    Country = g.Country,
+                    ProjectName = g.ProjectName,
+                    ProjectRole = g.ProjectRole,
+                    ProjectResponsibilities = g.ProjectResponsibilities,
+                    StartDate = g.StartDate,
+                    EndDate = g.EndDate,
+                    BusinessSolution = g.BusinessSolution,
+                    TechnologyStack = g.TechnologyStack,
+                }).ToList(),
+
+                educationDetails = x.EducationDetails.Select(d => new RMS.Domain.ResumeDomain.EducationalDetailsDomain()
+                {
+                    EducationId = d.EducationId,
+                    CourseName = d.CourseName,
+                    Specialization = d.Specialization,
+                    InstituteName = d.InstituteName,
+                    PassingYear = d.PassingYear,
+                    Marks = (float)d.Marks,
+                    University = d.University,
+                }).ToList(),
+
+                userResumes = x.UserResumes.Select(p => new UserResumeDomain()
+                {
+                    UserId = p.UserId,
+                    ResumeId = p.ResumeId,
+                    UserResumeId = p.UserResumeId,
+                }).ToList(),
+
+                certifications = x.Certifications.Select(p => new CertificationDomain()
+                {
+                    certificationId = p.certificationId,
+                    certificationName = p.certificationName,
+                }).ToList(),
+
+                trainings = x.Trainings.Select(p => new TrainingDomain()
+                {
+                    TrainingId = p.TrainingId,
+                    Trainingname = p.Trainingname
+                }).ToList(),
+
+                reviews = x.ReviewTables.Select(a => new ReviewTableDomain()
+                {
+                    ReviewId = a.ReviewId,
+                    ReviewComment = a.ReviewComment,
+                    ResumeId = a.ResumeId,
+                    ReviewerId = a.ReviewerId,
+                }).ToList()
+
+            }).ToList();
+            return result;
         }
     }
 }

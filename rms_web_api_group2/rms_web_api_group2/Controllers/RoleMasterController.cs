@@ -20,6 +20,12 @@ namespace rms_web_api_group2.Controllers
         {
             return this.roleMasterRepository.GetAll();
         }
+        [HttpGet]
+        [Route("GetActiveRoles")]
+        public List<RoleMasterDomain> GetActiveRoles()
+        {
+            return this.roleMasterRepository.GetActiveRole();
+        }
         // POST api/<RoleMasterController>
         [HttpPost]
         public int Post([FromBody] RoleMasterDomain value)

@@ -14,11 +14,19 @@ namespace rms_web_api_group2.Controllers
         {
             this.designationMasterRepository = designationMasterRepository;
         }
+       
+
         // GET: api/<DesignationMasterController>
         [HttpGet]
         public List<DesignationMasterDomain> Get()
         {
             return this.designationMasterRepository.GetAll();
+        }
+        [HttpGet]
+        [Route("GetActiveDesignation")]
+        public List<DesignationMasterDomain> GetActiveDesignation()
+        {
+            return this.designationMasterRepository.GetActiveDesignations();
         }
         // POST api/<RoleMasterController>
         [HttpPost]

@@ -24,7 +24,7 @@ builder.Services.AddTransient<IRoleMaster, RoleMasterRepository>();
 builder.Services.AddTransient<IDesignationMaster, DesignationMasterRepository>();
 builder.Services.AddTransient<IProjectMaster, ProjectMasterRepository>();
 builder.Services.AddTransient<ITechStackMaster, TechStackMasterRepository>();
-
+builder.Services.AddTransient<ISkillMaster, SkillsMasterRepository>();
 builder.Services.AddTransient<ITechStackValue, TechStackValueRepository>();
 builder.Services.AddCors();
 builder.Services.AddControllers();
@@ -34,7 +34,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var app = builder.Build();
 app.UseCors(options =>
-    options.WithOrigins("http://localhost:3001")
+    options.WithOrigins("http://localhost:3000")
     .AllowAnyHeader()
     .AllowAnyMethod()
 );

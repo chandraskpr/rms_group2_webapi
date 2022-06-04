@@ -12,5 +12,7 @@ namespace rms_web_api_group2.repository.Interface
         public ResumeDomain Insert(ResumeDomain obj);
         public void Update(int id,ResumeDomain obj);
         public void Delete(int entity);
+        public List<ResumeDomain> GetNonDraftResume();
+        public List<ResumeDomain> GetResumeBySkills(int skillIds);
     }
 }

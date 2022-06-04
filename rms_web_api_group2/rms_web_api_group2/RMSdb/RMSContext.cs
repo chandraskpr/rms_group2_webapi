@@ -26,6 +26,7 @@ namespace rms_web_api_group2.RMSdb
         public virtual DbSet<Resume> Resumes { get; set; } = null!;
         public virtual DbSet<RoleMaster> RoleMasters { get; set; } = null!;
         public virtual DbSet<Skill> Skills { get; set; } = null!;
+        public virtual DbSet<ReviewTable> ReviewTables { get; set; } = null!;
         public virtual DbSet<UserInfo> UserInfos { get; set; } = null!;
         public virtual DbSet<UserNotification> UserNotifications { get; set; } = null!;
         public virtual DbSet<UserResume> UserResumes { get; set; } = null!;
@@ -34,6 +35,7 @@ namespace rms_web_api_group2.RMSdb
         public virtual DbSet<TechStackMaster> TechStackMasters { get; set; } = null!;
         public virtual DbSet<TechStackValue> TechStackValues { get; set; } = null!;
         public virtual DbSet<Certification> Certifications { get; set; } = null!;
+        public virtual DbSet<SkillsMaster> SkillsMasters { get; set; } = null!;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -271,6 +273,34 @@ namespace rms_web_api_group2.RMSdb
                     .IsUnicode(false)
                     .HasColumnName("roleName");
             });
+            modelBuilder.Entity<ReviewTable>(entity =>
+            {
+                entity.HasKey(e => e.ReviewId)
+                    .HasName("PK__ReviewTa__2ECD6E044907FE41");
+
+                entity.ToTable("ReviewTable");
+
+                entity.Property(e => e.ReviewId).HasColumnName("reviewId");
+
+                entity.Property(e => e.ResumeId).HasColumnName("resumeId");
+
+                entity.Property(e => e.ReviewComment)
+                    .HasColumnType("text")
+                    .HasColumnName("reviewComment");
+
+                entity.Property(e => e.ReviewerId).HasColumnName("reviewerId");
+
+                entity.HasOne(d => d.Resume)
+                    .WithMany(p => p.ReviewTables)
+                    .HasForeignKey(d => d.ResumeId)
+                    .HasConstraintName("FK__ReviewTab__resum__0C85DE4D");
+
+                entity.HasOne(d => d.Reviewer)
+                    .WithMany(p => p.ReviewTables)
+                    .HasForeignKey(d => d.ReviewerId)
+                    .HasConstraintName("FK__ReviewTab__revie__0D7A0286");
+            });
+
 
             modelBuilder.Entity<Skill>(entity =>
             {
@@ -280,6 +310,10 @@ namespace rms_web_api_group2.RMSdb
                     .HasMaxLength(200)
                     .IsUnicode(false)
                     .HasColumnName("category");
+                entity.Property(e => e.SkillName)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("skillName");
 
                 entity.Property(e => e.ResumeId).HasColumnName("resumeID");
 
@@ -287,6 +321,27 @@ namespace rms_web_api_group2.RMSdb
                     .WithMany(p => p.Skills)
                     .HasForeignKey(d => d.ResumeId)
                     .HasConstraintName("FK_Skills_Resume").OnDelete(DeleteBehavior.Cascade);
+            });
+            modelBuilder.Entity<SkillsMaster>(entity =>
+            {
+                entity.HasKey(e => e.SkillsId)
+                    .HasName("PK__SkillsMa__CF77BD794EE76F0A");
+
+                entity.ToTable("SkillsMaster");
+
+                entity.Property(e => e.SkillsId).HasColumnName("skillsId");
+
+                entity.Property(e => e.IsDeleted).HasColumnName("isDeleted");
+
+                entity.Property(e => e.SkillCategory)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("skillCategory");
+
+                entity.Property(e => e.SkillName)
+                    .HasMaxLength(100)
+                    .IsUnicode(false)
+                    .HasColumnName("skillName");
             });
 
             modelBuilder.Entity<UserInfo>(entity =>

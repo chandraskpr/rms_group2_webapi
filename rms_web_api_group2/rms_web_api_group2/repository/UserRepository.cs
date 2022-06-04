@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RMS.Domain.ResumeDomain;
 using rms_web_api_group2.data;
+using rms_web_api_group2.data.Resume;
 using rms_web_api_group2.data.User;
 using rms_web_api_group2.repository.Interface;
 using rms_web_api_group2.RMSdb;
@@ -9,10 +10,10 @@ namespace rms_web_api_group2.repository
 {
     public class UserRepository : BaseRepository<UserInfo>, IUserRepository
     {
-        
-        public UserRepository(RMSContext context):base(context)
+
+        public UserRepository(RMSContext context) : base(context)
         {
-           
+
         }
 
         public new List<UserData> SelectAll()
@@ -21,7 +22,7 @@ namespace rms_web_api_group2.repository
             {
                 UserId = x.UserId,
                 UserName = x.UserName,
-               UserEmail = x.UserEmail,
+                UserEmail = x.UserEmail,
                 UserRole = x.UserRole,
                 Usernotifications = x.UserNotifications.Select(s => new UserNotificationsData()
                 {
@@ -37,11 +38,52 @@ namespace rms_web_api_group2.repository
                     UserResumeId = s.UserResumeId,
                     UserId = s.UserId,
                     ResumeId = s.ResumeId,
-                    
+
                 }).ToList(),
 
             }).ToList();
             return (records);
+        }
+
+
+
+        public int CreateComment(ReviewTableDomain review)
+        {
+            var rev = new ReviewTable()
+            {
+                ResumeId = review.ResumeId,
+                ReviewComment = review.ReviewComment,
+                ReviewerId = review.ReviewerId,
+
+            };
+            var result = this.context.ReviewTables.Add(rev);
+            this.context.SaveChanges();
+            return rev.ReviewId;
+        }
+        public void EditComment(ReviewTableDomain review, int id)
+        {
+            var rev = context.ReviewTables.FirstOrDefault(x => x.ReviewId == id);
+            if (rev != null)
+            {
+                rev.ReviewComment = review.ReviewComment;
+                rev.ReviewerId = review.ReviewerId;
+
+                context.ReviewTables.Update(rev);
+                context.SaveChanges();
+            }
+
+        }
+
+        public List<ReviewTableDomain> GetComment(int userId)
+        {
+            var reviews = context.ReviewTables.Where(y => y.ReviewerId == userId).Select(x => new ReviewTableDomain()
+            {
+                ReviewerId = x.ReviewerId,
+                ReviewComment = x.ReviewComment,
+                ReviewId = x.ReviewId,
+                ResumeId = x.ResumeId,
+            }).ToList();
+            return reviews;
         }
         public void Insert(UserData userdata)
         {
@@ -52,11 +94,11 @@ namespace rms_web_api_group2.repository
                 UserEmail = userdata.UserEmail,
                 UserRole = userdata.UserRole,
             };
-                foreach (var record in userdata.Usernotifications)
+            foreach (var record in userdata.Usernotifications)
             {
                 res.UserNotifications.Add(new UserNotification()
                 {
-                    
+
                     NotificationId = record.NotificationId,
                     UserId = record.UserId,
                     NotificationDescription = record.NotificationDescription,
@@ -64,7 +106,7 @@ namespace rms_web_api_group2.repository
                     NotificationState = record.NotificationState
                 });
             }
-                foreach (var record in userdata.userResume)
+            foreach (var record in userdata.userResume)
             {
                 res.UserResumes.Add(new UserResume()
                 {
@@ -76,9 +118,9 @@ namespace rms_web_api_group2.repository
 
             base.Insert(res);
         }
-           
-            public void Delete(int UserId)
-            {
+
+        public void Delete(int UserId)
+        {
             var res = this.entitySet
                .Include(x => x.UserNotifications)
                .Include(x => x.UserResumes)
@@ -138,7 +180,6 @@ namespace rms_web_api_group2.repository
             }).Where(x => x.NotificationState == "Active").ToList();
             return records;
         }
-
 
     }
 }

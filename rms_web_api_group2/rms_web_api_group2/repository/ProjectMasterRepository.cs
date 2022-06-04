@@ -18,8 +18,20 @@ namespace rms_web_api_group2.repository
                 ProjectId = x.ProjectId,
                 ProjectName = x.ProjectName,
                 ProjectDescription = x.ProjectDescription,
+                IsDeleted = (bool)x.IsDeleted,
             }).ToList();
             return project;
+        }
+        public List<ProjectMasterDomain> GetActiveProject()
+        {
+            var result = base.SelectAll().Where(x => x.IsDeleted.HasValue && !x.IsDeleted.Value).Select(x => new ProjectMasterDomain()
+            {
+                ProjectId = x.ProjectId,
+                ProjectName = x.ProjectName,
+                ProjectDescription = x.ProjectDescription,
+                IsDeleted = (bool)x.IsDeleted,
+            }).ToList();
+            return result;
         }
         public int Create(ProjectMasterDomain project)
         {
@@ -28,6 +40,7 @@ namespace rms_web_api_group2.repository
                 ProjectId = project.ProjectId,
                 ProjectName = project.ProjectName,
                 ProjectDescription = project.ProjectDescription,
+                IsDeleted = (bool)project.IsDeleted,
             };
             var response = base.Insert(res);
             return response.ProjectId;

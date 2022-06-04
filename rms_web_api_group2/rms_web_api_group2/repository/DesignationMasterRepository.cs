@@ -21,6 +21,17 @@ namespace rms_web_api_group2.repository
             }).ToList();
             return designations;
         }
+        public List<DesignationMasterDomain> GetActiveDesignations()
+        {
+            var result = base.SelectAll().Where(x => x.IsDeleted.HasValue && !x.IsDeleted.Value).Select(x => new DesignationMasterDomain()
+            {
+                DesignationId = x.DesignationId,
+                DesignationName = x.DesignationName,
+                DesignationDescription = x.DesignationDescription,
+                IsDeleted = (bool)x.IsDeleted,
+            }).ToList();
+            return result;
+        }
         public int Create(DesignationMasterDomain designation)
         {
             var res = new DesignationMaster()
